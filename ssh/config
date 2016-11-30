@@ -1,0 +1,77 @@
+Host redis1
+  HostName 10.12.182.1
+  Port 32123
+  User xzhou
+
+Host redis2
+  HostName 10.12.182.2
+  Port 32123
+  User xzhou
+
+Host redis3
+  HostName 10.12.182.3
+  Port 32123
+  User xzhou
+
+Host runner
+  HostName 10.12.75.5
+  Port 32123
+  User xzhou
+
+Host app1
+  HostName 10.12.180.1
+  Port 32123
+  User xzhou
+
+Host app2
+  HostName 10.12.180.2
+  Port 32123
+  User xzhou
+
+Host live1
+  HostName 10.12.244.1
+  Port 32123
+  User xzhou
+
+Host sandbox
+  HostName 10.12.122.1
+  Port 32123
+  User xzhou
+
+Host core.dev
+  HostName 10.12.122.11
+  User xzhou
+  Port 32123
+
+Host db.dev
+  HostName 10.12.122.21
+  Port 32123
+  User xzhou
+
+Host jenkins
+  HostName 10.12.74.11
+  Port 32123
+  User xzhou
+
+Host jenkins.master
+  HostName 10.12.74.1
+  User xzhou
+  Port 32123
+
+Host openshift
+  HostName osm01.lab.mm.local
+  Port 8443
+  User xzhou
+
+Host gitlab.bof.mm.local
+  HostName gitlab.bof.mm.local
+  User xzhou
+  Port 32123
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa_gitlab
+
+Host github.com
+  HostName github.com
+  Port 22
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa
