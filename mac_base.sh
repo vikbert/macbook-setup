@@ -11,6 +11,7 @@ function brew_install(){
     brew install "$1"
   fi
 }
+
 function cask_install(){
   brew cask ls --versions "$1"
   if [ $? -eq 0 ]; then
