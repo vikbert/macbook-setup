@@ -1,5 +1,5 @@
 #!/bin/bash
-source ./mac_base.sh
+source ./base.sh
 
 ############ install xcode  ############
 function install_xcode(){
@@ -24,13 +24,22 @@ function install_update_brew(){
     fi
 }
 
+function install_fish_shell() {
+    # @see http://theworkaround.com/2016/10/11/installing-fish-on-osx.html
+    brew_install fish
+    chsh -s /usr/local/bin/fish # switch default bash to fish shell
+    curl -L http://get.oh-my.fish | fish # install oh_my_fish
+}
+
 ############ install apps via brew  ############
 function brew_install_apps() {
-  brew_install htop-osx
-  brew_install cheat
-  brew_install python3
-  brew_install tree
-  brew_install wget
+    brew_install htop-osx
+    brew_install cheat
+    brew_install python3
+    brew_install tree
+    brew_install wget
+    brew_install ack # better search tools than grep
+    install_fish_shell
 }
 
 ############ install apps via caskroom  ############
@@ -54,6 +63,7 @@ function cask_install_apps() {
   cask_install iterm2
   cask_install git
   # editor
+  cask_install vim
   cask_install atom
   cask_install bear
   cask_install macdown
@@ -69,5 +79,5 @@ function cask_install_apps() {
 install_xcode
 install_update_brew
 brew_install_apps
-#cask_install_apps
-brew update && brew upgrade && brew cleanup; brew doctor # check the brew health
+cask_install_apps
+brew update && brew cleanup; brew doctor # check the brew health

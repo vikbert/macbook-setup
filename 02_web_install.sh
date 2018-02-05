@@ -1,5 +1,5 @@
 #!/bin/bash
-source ./mac_base.sh
+source ./base.sh
 
 # install PHP
 function install_php() {
@@ -23,7 +23,6 @@ function install_node() {
     brew_install node
     brew_install yarn
 }
-
 
 ## apply tasks
 install_php
