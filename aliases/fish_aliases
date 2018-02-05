@@ -1,0 +1,124 @@
+#!/usr/local/bin/fish
+export LSCOLORS="exfxcxdxbxegedabagacad"
+
+# utilities
+# -----------------------------------------------------------------
+function localip --description "show local IP of your maschine"
+    ipconfig getifaddr en1
+end
+function publicip --description "show public IP of your machine"
+    curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+'
+end
+function randpw --description "generate a random password"
+  dd if=/dev/urandom bs=1 count=16 2>/dev/null | base64 | rev | cut -b 2- | rev
+end
+function pkill --description "pkill a process interactively"
+  ps aux | peco | awk '{ print $2 }' | xargs kill
+end
+function port --description "show who is listening to the port $argv"
+  lsof -n -i4TCP:$argv | grep LISTEN
+end
+
+# FINDER sidebar
+# ------------------------------------------------------------------
+alias restore_finder="cd ~/Library/Preferences; and  sudo find com.apple.finder.plist* -exec rm {} \;; and  killall Finder"
+
+# COFNIG
+# ------------------------------------------------------------------
+alias ss='cat ~/.ssh/config'
+
+# brew 
+# ------------------------------------------------------------------
+alias bi='brew install'
+alias bs='brew search'
+
+# TOOLs Software
+# ------------------------------------------------------------------
+alias mx='cmatrix'
+alias d="axel -n 10 -a"
+alias g='googler --colors bjcxxy -n 8'
+alias mp="mpsyt"
+alias pw="pwgen"
+
+# system wide
+# ------------------------------------------------------------------
+alias ..="cd ..; and  ls"
+alias ...="cd ../..; and  ls"
+alias version='echo nodejs; and  node -v; and  echo npm; and  npm -v; and  php -v; and  docker -v; and  zsh --version'
+alias dusort='du -sckx * | sort -nr'
+alias bk='cd $OLDPWD'
+alias ttop='top -ocpu -R -F -s 2 -n30'
+alias lh='ls -a | egrep "^\."'
+alias l='ls -alh'
+alias h='cd ~'
+alias c='clear'
+alias t="down"
+alias s="du -sh"
+alias x="exit"
+alias ae='vi ~/.fish_aliases'
+alias au='source ~/.fish_aliases'
+alias ds_clean="find . -name '*.DS_Store' -type f -ls -delete"
+alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true; and killall Finder"
+alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false; and killall Finder"
+alias et="rm -rfv ~/.Trash"
+
+# -------------------------------------------------------------------
+# Git
+# -------------------------------------------------------------------
+alias gbu='git remote prune origin; and  gb'
+alias gbd='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
+alias ga='git add .'
+alias gp='git push'
+alias gl='git log'
+alias gst='git status'
+alias gd='git diff'
+alias gm='git commit -m'
+alias gb='git branch -v -a'
+alias gc='git checkout'
+alias gu='git pull'
+alias gcl='git clone'
+alias gta='git tag -a -m'
+alias gf='git reflog'
+alias glc="git log --oneline --decorate --color"
+alias gmnf="git merge --no-ff"
+
+# Editor
+# ------------------------------------------------------------------
+alias a="/usr/local/bin/atom"
+
+# vagrant
+# ------------------------------------------------------------------
+alias vssh="vagrant ssh"
+alias vup="vagrant up"
+
+# composer
+# ------------------------------------------------------------------
+alias cb='composer browse'
+alias cu='composer update'
+alias cr='composer req'
+
+# Symfony
+# ------------------------------------------------------------------
+alias cc='bin/console c:c'
+alias ccc='bin/console c:c; and bin/console --env=prod c:c'
+alias dev='bin/console --env=dev'
+alias prod='bin/console --env=prod'
+
+# docker-compose
+# ------------------------------------------------------------------
+alias dstart='docker-compose start'
+alias dup='docker-compose up -d'
+alias dstop='docker-compose stop'
+alias dlog='docker-compose logs'
+
+# docker
+# ------------------------------------------------------------------
+alias dps='docker ps -a'
+alias dia="docker images -a"
+alias drmi="docker rmi -f"
+alias drm="docker rm -f"
+
+# php 
+# ------------------------------------------------------------------
+alias php56="brew unlink php71; and brew link php56; and php -v"
+alias php71="brew unlink php56; and brew link php71; and php -v"

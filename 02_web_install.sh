@@ -2,7 +2,7 @@
 source ./base.sh
 
 # install PHP
-function install_php() {
+function install_php71() {
     brew tap homebrew/homebrew-php
     brew unlink php56
     brew_install php71
@@ -25,6 +25,9 @@ function install_node() {
 }
 
 ## apply tasks
-install_php
+install_php71
 install_composer
 install_node
+
+## brew install
+brew_install sqlite

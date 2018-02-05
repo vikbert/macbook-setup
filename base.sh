@@ -20,3 +20,13 @@ function cask_install(){
     brew cask install "$1"
   fi
 }
+
+
+function pip3_install(){
+  pip3 show "$1"
+  if [ $? -eq 0 ]; then
+    doEcho "$1 is installed"
+  else
+    pip3 install "$1"
+  fi
+}
