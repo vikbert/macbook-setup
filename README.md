@@ -95,12 +95,27 @@ install yarn # another package manager powered by facebook
 execute the install script:
 `$ bash 03_tool_install.sh`
 ```
-install httpie # simple http request client
-install pwgen # password generator
-install tig  # git graphen
-install cmatrix # matric monitoring protection
-install axel # faster download with 10x threads
-install googler # do google in terminal
+# play youtube video/audio in terminal
+# @see https://www.ostechnix.com/mps-youtube-commandline-youtube-player-downloader
+install myspt
+
+# simple http request client
+install httpie
+
+# password generator
+install pwgen
+
+# git graphen
+install tig  
+
+# matric monitoring protection
+install cmatrix
+
+# faster download with 10x threads
+install axel
+
+# do google in terminal
+install googler
 
 ```
 
