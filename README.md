@@ -84,18 +84,29 @@ install dash
 ```
 # 06 Install Web Environment
 execute the install script `bash 02_web_install.sh`
+```
+install php56 or php71
+install composer
+install node
+install yarn # another package manager powered by facebook
+```
 
 # 07 Install additional tools
 execute the install script:
-
 `$ bash 03_tool_install.sh`
+```
+install httpie # simple http request client
+install pwgen # password generator
+install tig  # git graphen
+install cmatrix # matric monitoring protection
+install axel # faster download with 10x threads
+install googler # do google in terminal
+
+```
 
 # Note
 - [Dropbox](https://www.dropbox.com/): File syncing to the cloud. I put all my documents in Dropbox. It syncs them to all my devices (laptop, mobile, tablet), and serves as a backup as well! **(Free for 2GB)**
 
 - [Google Drive](https://drive.google.com/): File syncing to the cloud too! I use Google Docs a lot to collaborate with others (edit a document with multiple people in real-time!), and sometimes upload other non-Google documents (pictures, etc.), so the app comes in handy for that. **(Free for 5GB)**
 
-- [lastpass](https://www.lastpass.com/enfUfi6rz6RIaAlTqEALw_wcB): Manage the passwords
- - [lastpass firefox plugin](https://addons.mozilla.org/de/firefox/addon/lastpass-password-manager/)
- - [lastpass chrome plugin](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd?hl=de)
-
+- [lastpass](https://www.lastpass.com/enfUfi6rz6RIaAlTqEALw_wcB): Manage the passwords: [lastpass firefox plugin](https://addons.mozilla.org/de/firefox/addon/lastpass-password-manager/); [lastpass chrome plugin](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd?hl=de)
