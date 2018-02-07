@@ -67,6 +67,7 @@ function cask_install_apps() {
   cask_install atom
   cask_install bear
   cask_install macdown
+  cask_install lepton
   # communication
   cask_install slack
   # database

@@ -27,7 +27,7 @@ alias restore_finder="cd ~/Library/Preferences; and  sudo find com.apple.finder.
 # ------------------------------------------------------------------
 alias ss='cat ~/.ssh/config'
 
-# brew 
+# brew
 # ------------------------------------------------------------------
 alias bi='brew install'
 alias bs='brew search'
@@ -37,7 +37,7 @@ alias bs='brew search'
 alias mx='cmatrix'
 alias d="axel -n 10 -a"
 alias g='googler --colors bjcxxy -n 8'
-alias mp="mpsyt"
+alias youtube="mpsyt"
 alias pw="pwgen"
 
 # system wide
@@ -55,8 +55,8 @@ alias c='clear'
 alias t="down"
 alias s="du -sh"
 alias x="exit"
-alias ae='vi ~/.fish_aliases'
-alias au='source ~/.fish_aliases'
+alias ae='vi ~/sites/awesome-macbook-setup/aliases/fish_aliases'
+alias au='source ~/sites/awesome-macbook-setup/aliases/fish_aliases'
 alias ds_clean="find . -name '*.DS_Store' -type f -ls -delete"
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true; and killall Finder"
 alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false; and killall Finder"
@@ -118,7 +118,7 @@ alias dia="docker images -a"
 alias drmi="docker rmi -f"
 alias drm="docker rm -f"
 
-# php 
+# php
 # ------------------------------------------------------------------
 alias php56="brew unlink php71; and brew link php56; and php -v"
 alias php71="brew unlink php56; and brew link php71; and php -v"
