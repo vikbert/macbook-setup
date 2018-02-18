@@ -37,8 +37,11 @@ alias bs='brew search'
 alias mx='cmatrix'
 alias d="axel -n 10 -a"
 alias g='googler --colors bjcxxy -n 8'
-alias youtube="mpsyt"
 alias pw="pwgen"
+
+# music video 
+# ------------------------------------------------------------------
+alias youtube="mpsyt"
 
 # system wide
 # ------------------------------------------------------------------
@@ -61,6 +64,7 @@ alias ds_clean="find . -name '*.DS_Store' -type f -ls -delete"
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true; and killall Finder"
 alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false; and killall Finder"
 alias et="rm -rfv ~/.Trash"
+alias rr="rm -rf "
 
 # -------------------------------------------------------------------
 # Git
