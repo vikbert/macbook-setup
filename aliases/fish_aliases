@@ -1,10 +1,17 @@
 #!/usr/local/bin/fish
 export LSCOLORS="exfxcxdxbxegedabagacad"
+export CHEAT_EDITOR="/usr/local/bin/mvim -v"
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# 定义vim 到 mvim
+alias vi='/usr/local/bin/mvim -v'
+alias vim='/usr/local/bin/mvim -v'
+alias ce='export VISUAL=vim; crontab -e'
 
 # utilities
 # -----------------------------------------------------------------
 function localip --description "show local IP of your maschine"
-    ipconfig getifaddr en1
+    netstat -rn | grep 'default' | awk '{print $2}'
 end
 function publicip --description "show public IP of your machine"
     curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+'
@@ -27,6 +34,11 @@ alias restore_finder="cd ~/Library/Preferences; and  sudo find com.apple.finder.
 # ------------------------------------------------------------------
 alias ss='cat ~/.ssh/config'
 
+# yarn 
+# ------------------------------------------------------------------
+alias yi='yarn install'
+alias ya='yarn global add'
+
 # brew
 # ------------------------------------------------------------------
 alias bi='brew install'
@@ -39,8 +51,12 @@ alias d="axel -n 10 -a"
 alias g='googler --colors bjcxxy -n 8'
 alias pw="pwgen"
 
-# music video 
-# ------------------------------------------------------------------
+# mobile development
+# ------------------------------------------------------------------D
+alias we='weex' 
+
+# music video
+# ------------------------------------------------------------------D
 alias youtube="mpsyt"
 
 # system wide
@@ -51,20 +67,28 @@ alias version='echo nodejs; and  node -v; and  echo npm; and  npm -v; and  php -
 alias dusort='du -sckx * | sort -nr'
 alias bk='cd $OLDPWD'
 alias ttop='top -ocpu -R -F -s 2 -n30'
+alias l.='ls -d .* --color=auto'
 alias lh='ls -a | egrep "^\."'
 alias l='ls -alh'
 alias h='cd ~'
 alias c='clear'
-alias t="down"
-alias s="du -sh"
 alias x="exit"
 alias ae='vi ~/sites/awesome-macbook-setup/aliases/fish_aliases'
 alias au='source ~/sites/awesome-macbook-setup/aliases/fish_aliases'
+alias as='alias | grep '
+
 alias ds_clean="find . -name '*.DS_Store' -type f -ls -delete"
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true; and killall Finder"
 alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false; and killall Finder"
 alias et="rm -rfv ~/.Trash"
 alias rr="rm -rf "
+
+# -------------------------------------------------------------------
+# tree 
+# -------------------------------------------------------------------
+alias t='tree .'
+alias t2='tree -L 2 .'
+alias t3='tree -L 3 .'
 
 # -------------------------------------------------------------------
 # Git
@@ -73,18 +97,18 @@ alias gbu='git remote prune origin; and  gb'
 alias gbd='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 alias ga='git add .'
 alias gp='git push'
-alias gl='git log'
 alias gst='git status'
-alias gd='git diff'
 alias gm='git commit -m'
-alias gb='git branch -v -a'
+alias gam='git commit --amend --no-edit'
+alias gba='git branch -v -a'
+alias gb='git branch'
 alias gc='git checkout'
 alias gu='git pull'
 alias gcl='git clone'
-alias gta='git tag -a -m'
 alias gf='git reflog'
-alias glc="git log --oneline --decorate --color"
+alias gl="git log --oneline --decorate --color"
 alias gmnf="git merge --no-ff"
+alias greset='git reset --hard HEAD'
 
 # Editor
 # ------------------------------------------------------------------
@@ -122,7 +146,30 @@ alias dia="docker images -a"
 alias drmi="docker rmi -f"
 alias drm="docker rm -f"
 
+# tig 
+# ------------------------------------------------------------------
+alias ts='tig status'
+
 # php
 # ------------------------------------------------------------------
 alias php56="brew unlink php71; and brew link php56; and php -v"
 alias php71="brew unlink php56; and brew link php71; and php -v"
+
+# kochzauber
+# ------------------------------------------------------------------
+alias hello="k; and vagrant up"
+alias bye='k; and vagrant halt; x '
+
+alias k='cd /Users/xzhou/lidl/kochzauber'
+alias r='cd ~/lidl/research-day'
+alias kc='k; and vagrant ssh -c "php vendor/bin/php-cs-fixer fix  -v 2> /dev/null; "'
+alias kt='k; and vagrant ssh -c "php vendor/bin/phpunit " '
+alias kt-unit='k; and vagrant ssh -c "php vendor/bin/phpunit tests/Unit" '
+alias kt-functional='k; and vagrant ssh -c "php vendor/bin/phpunit tests/Functional  " '
+alias kt-behat='k; and vagrant ssh -c "php vendor/bin/behat -p ci --tags \'smoke\'   " '
+
+# koza tests
+# ------------------------------------------------------------------
+function kt 
+  k; and vagrant ssh -c "php vendor/bin/phpunit --filter $argv"
+end
