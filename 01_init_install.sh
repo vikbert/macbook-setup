@@ -29,13 +29,22 @@ function install_fish_shell() {
     brew_install fish
     chsh -s /usr/local/bin/fish # switch default bash to fish shell
     curl -L http://get.oh-my.fish | fish # install oh_my_fish
+    omf install agnoster
+
+    #@see https://github.com/powerline/fonts
+    # install powerline fonts
+    git clone https://github.com/powerline/fonts.git --depth=1
+    cd fonts && bash install.sh && cd ..
+    rm -rf fonts
+
+    # !!! change the fonts in iterm2 profiles->text->fonts to 14pt Melso LG L regular for powerline
 }
 
 ############ install apps via brew  ############
 function brew_install_apps() {
     brew_install htop-osx
     brew_install cheat
-    brew_install python3
+    brew_install python3 && brew upgrade python
     brew_install tree
     brew_install wget
     brew_install ack # better search tools than grep
@@ -61,7 +70,6 @@ function cask_install_apps() {
   cask_install vlc
   # terminal
   cask_install iterm2
-  cask_install git
   # editor
   cask_install vim
   cask_install atom
