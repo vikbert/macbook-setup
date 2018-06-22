@@ -98,6 +98,7 @@ alias gbu='git remote prune origin; and  gb'
 alias gbd='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 alias ga='git add '
 alias gp='git push'
+alias gpa='git add -A; git commit -m "updates"; and git push -f'
 alias gst='git status'
 alias gm='git commit -m'
 alias gam='git commit --amend --no-edit'
@@ -166,6 +167,8 @@ alias bye='k; and vagrant halt; x '
 alias k='cd /Users/xzhou/lidl/kochzauber'
 alias r='cd ~/lidl/research-day'
 alias kssh='k; and vssh'
+alias wiki='cd ~/sites/bitbucket/lidl-wiki; atom .; and mkdocs serve'
+
 
 # koza tests
 # -------------------------------------------------------------------------------------------------
