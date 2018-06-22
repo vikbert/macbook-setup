@@ -38,7 +38,7 @@ alias restore_finder="cd ~/Library/Preferences; and  sudo find com.apple.finder.
 # -------------------------------------------------------------------------------------------------
 alias ss='cat ~/.ssh/config'
 
-# yarn 
+# yarn
 # -------------------------------------------------------------------------------------------------
 alias yi='yarn install'
 alias ya='yarn global add'
@@ -57,7 +57,7 @@ alias pw="pwgen"
 
 # mobile development
 # -------------------------------------------------------------------------------------------------
-alias we='weex' 
+alias we='weex'
 
 # music video
 # -------------------------------------------------------------------------------------------------
@@ -71,7 +71,6 @@ alias version='echo nodejs; and  node -v; and  echo npm; and  npm -v; and  php -
 alias dusort='du -sckx * | sort -nr'
 alias bk='cd $OLDPWD'
 alias ttop='top -ocpu -R -F -s 2 -n30'
-alias l.='ls -d .* --color=auto'
 alias lh='ls -a | egrep "^\."'
 alias l='ls -alh'
 alias h='cd ~'
