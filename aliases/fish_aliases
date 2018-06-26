@@ -163,6 +163,8 @@ alias php71="brew unlink php56; and brew link php71; and php -v"
 # -------------------------------------------------------------------------------------------------
 alias hello="k; and vagrant up"
 alias bye='k; and vagrant halt; x '
+alias hs='history | grep '
+alias job='env EDITOR=vim crontab -e'
 
 alias k='cd /Users/xzhou/lidl/kochzauber'
 alias r='cd ~/lidl/research-day'
