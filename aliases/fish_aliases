@@ -183,6 +183,7 @@ alias kt-functional='k; and vagrant ssh -c "php /var/www/virtual/platform/curren
 alias kt-test='kt-unit; and kt-functional'
 alias kt-behat='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/bin/behat -p ci --tags \'smoke\'   " '
 alias kcs='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/bin/php-cs-fixer fix  -v 2> /dev/null; "'
+alias kinit='k; and vagrant ssh -c "echo \'cd /var/www/virtual/platform/current/\' >> .bashrc"'
 
 # grafana research
 # -------------------------------------------------------------------------------------------------
