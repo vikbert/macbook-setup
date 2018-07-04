@@ -190,5 +190,6 @@ alias kinit='k; and vagrant ssh -c "echo \'cd /var/www/virtual/platform/current/
 alias grafana='cd /Users/xzhou/lidl/research-day/grafana/vagrant-grafana-graphite'
 
 
-#  ansible
+# Monitoring
 # -------------------------------------------------------------------------------------------------
+alias m-queue='bash ~/sites/shell/monitoring/queue.sh'
