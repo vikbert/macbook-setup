@@ -193,4 +193,4 @@ alias grafana='cd /Users/xzhou/lidl/research-day/grafana/vagrant-grafana-graphit
 # Monitoring
 # -------------------------------------------------------------------------------------------------
 alias m-consumer='bash ~/sites/shell/monitoring/queue.sh'
-alias log-indi="ssh xzhou@tux1162.int.secrz.com \"bash -c \'sudo tail -n 50 /var/log/nginx/*error.log /var/log/platform/indi/*.log\'\""
+alias log='bash ~/sites/shell/monitoring/logging.sh'
