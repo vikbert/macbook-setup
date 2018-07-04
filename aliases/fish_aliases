@@ -192,4 +192,4 @@ alias grafana='cd /Users/xzhou/lidl/research-day/grafana/vagrant-grafana-graphit
 
 # Monitoring
 # -------------------------------------------------------------------------------------------------
-alias m-queue='bash ~/sites/shell/monitoring/queue.sh'
+alias m-consumer='bash ~/sites/shell/monitoring/queue.sh'
