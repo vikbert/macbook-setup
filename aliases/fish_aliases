@@ -193,5 +193,6 @@ alias grafana='cd /Users/xzhou/lidl/research-day/grafana/vagrant-grafana-graphit
 
 # Monitoring
 # -------------------------------------------------------------------------------------------------
+alias shell='cd /Users/xzhou/sites/shell/monitoring; and atom .'
 alias m-consumer='bash ~/sites/shell/monitoring/queue.sh'
 alias log='bash ~/sites/shell/monitoring/logging.sh'
