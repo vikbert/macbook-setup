@@ -188,7 +188,7 @@ alias ksetup='k; and vagrant ssh -c "bash /opt/lidl/ansible/kozang-setup-apps.sh
 
 # indi
 # -------------------------------------------------------------------------------------------------
-alias icc='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; bin/console cache:clear"'
+alias icc='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; APP_PORTAL=indi bin/console cache:clear"'
 alias igulp='k; rm -rf  core/assets/indi/fonts         core/assets/indi/images         core/assets/indi/tmp         core/assets/indi/css         core/assets/indi/js         core/assets/indi/sprites; and vagrant ssh -c "cd /var/www/virtual/platform/current/; APP_PORTAL=indi npm run gulp:dev;"'
 
 # grafana research
