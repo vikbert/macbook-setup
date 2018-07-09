@@ -154,6 +154,11 @@ alias drm="docker rm -f"
 # -------------------------------------------------------------------------------------------------
 alias ts='tig status'
 
+# stretchly: a tool for make a good break
+# -------------------------------------------------------------------------------------------------
+alias stretchly_edit='vi ~/sites/github/stretchly/app/utils/'
+alias stretchly_build='cd ~/sites/github/stretchly; and npm run dist '
+
 # php
 # -------------------------------------------------------------------------------------------------
 alias php56="brew unlink php71; and brew link php56; and php -v"
