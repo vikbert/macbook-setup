@@ -159,6 +159,12 @@ alias ts='tig status'
 alias stretchly_edit='vi ~/sites/github/stretchly/app/utils/'
 alias stretchly_build='cd ~/sites/github/stretchly; and npm run dist '
 
+# github
+# -------------------------------------------------------------------------------------------------
+alias github='cd ~/sites/github; and ls -al'
+
+
+
 # php
 # -------------------------------------------------------------------------------------------------
 alias php56="brew unlink php71; and brew link php56; and php -v"
