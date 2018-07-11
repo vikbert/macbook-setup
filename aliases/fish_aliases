@@ -163,6 +163,11 @@ alias stretchly_build='cd ~/sites/github/stretchly; and npm run dist '
 # -------------------------------------------------------------------------------------------------
 alias github='cd ~/sites/github; and ls -al'
 
+# curl cheat.sh
+# -------------------------------------------------------------------------------------------------
+function ch
+  curl cheat.sh/$argv
+end
 
 
 # php
