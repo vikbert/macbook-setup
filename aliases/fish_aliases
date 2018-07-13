@@ -162,6 +162,7 @@ alias stretchly_build='cd ~/sites/github/stretchly; and npm run dist '
 # github
 # -------------------------------------------------------------------------------------------------
 alias github='cd ~/sites/github; and ls -al'
+alias bitbucket='cd ~/sites/bitbucket; and ls -al'
 
 # curl cheat.sh
 # -------------------------------------------------------------------------------------------------
