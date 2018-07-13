@@ -185,7 +185,7 @@ alias job='env EDITOR=vim crontab -e'
 alias k='cd /Users/xzhou/lidl/kochzauber'
 alias r='cd ~/lidl/research-day'
 alias kssh='k; and vssh'
-alias wiki='cd ~/sites/bitbucket/lidl-wiki; atom .; and mkdocs serve'
+alias wiki='cd ~/sites/bitbucket/vikbert.bitbucket.io; atom .; and cd ..; and docute vikbert.bitbucket.io'
 
 
 # koza tests
