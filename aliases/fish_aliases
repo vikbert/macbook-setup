@@ -115,6 +115,15 @@ alias gtags='git ls-remote --tags'
 alias gfc='git log -1 --format="%an %ae%n%cn %ce" '
 alias gr='git remote -v'
 
+
+# flutter * dart
+# -------------------------------------------------------------------------------------------------
+alias fc="flutter create"
+alias fd="flutter devices"
+alias ios="open -a Simulator"
+alias fr="flutter run"
+
+
 # Editor
 # -------------------------------------------------------------------------------------------------
 alias a="/usr/local/bin/atom"
