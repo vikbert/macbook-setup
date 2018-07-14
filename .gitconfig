@@ -1,3 +1,6 @@
+[user]
+	name = vikbert
+	email = segentor@gmail.com
 [alias]
   # Show verbose output about tags, branches or remotes
   tags = tag -l

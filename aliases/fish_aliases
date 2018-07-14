@@ -118,10 +118,13 @@ alias gr='git remote -v'
 
 # flutter * dart
 # -------------------------------------------------------------------------------------------------
-alias fc="flutter create"
-alias fd="flutter devices"
 alias ios="open -a Simulator"
-alias fr="flutter run"
+alias f='cd /Users/xzhou/sites/flutterProjects; and ls -al'
+function fcreate --description "create flutter project and enter there"
+    flutter create $argv; and f; and cd $argv; and ls -al;
+end
+alias fdevices="flutter devices"
+alias frun="flutter run"
 
 
 # Editor
@@ -197,7 +200,7 @@ alias job='env EDITOR=vim crontab -e'
 alias k='cd /Users/xzhou/lidl/kochzauber'
 alias r='cd ~/lidl/research-day'
 alias kssh='k; and vssh'
-alias wiki='cd ~/sites/bitbucket/vikbert.bitbucket.io; atom .; and cd ..; and docute vikbert.bitbucket.io'
+alias wiki='cd ~/sites/bitbucket/vikbert.bitbucket.io; code .; and cd ..; and docute vikbert.bitbucket.io'
 
 
 # koza tests
