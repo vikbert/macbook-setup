@@ -201,6 +201,7 @@ alias k='cd /Users/xzhou/lidl/kochzauber'
 alias r='cd ~/lidl/research-day'
 alias kssh='k; and vssh'
 alias wiki='cd ~/sites/bitbucket/vikbert.bitbucket.io; code .; and cd ..; and docute vikbert.bitbucket.io'
+alias design='cd ~/sites/github/vikbert.github.io; code .; and cd ..; and docute vikbert.github.io'
 
 
 # koza tests
