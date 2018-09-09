@@ -94,7 +94,8 @@ alias t3='tree -L 3 .'
 
 # Git
 # -------------------------------------------------------------------------------------------------
-alias gbu='git remote prune origin; and  gb'
+alias gr='git remote -v'
+alias grp='git remote prune origin; and  gb'
 alias gbd='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 alias ga='git add '
 alias gp='git push'
@@ -113,7 +114,6 @@ alias gmnf="git merge --no-ff"
 alias greset='git reset --hard HEAD'
 alias gtags='git ls-remote --tags'
 alias gfc='git log -1 --format="%an %ae%n%cn %ce" '
-alias gr='git remote -v'
 
 
 # flutter * dart
