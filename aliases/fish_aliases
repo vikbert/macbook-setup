@@ -219,6 +219,7 @@ alias kcs='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/b
 alias kinit='k; and vagrant ssh -c "echo \'cd /var/www/virtual/platform/current/\' >> .bashrc"'
 alias ksetup='k; and vagrant ssh -c "bash /opt/lidl/ansible/kozang-setup-apps.sh"'
 alias kcc='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; APP_PORTAL=koza bin/console cache:clear"'
+alias kt-config='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; yes | cp -rf app/config/koza/parameters.yaml.dist app/config/koza/parameters.yaml; yes | cp -rf app/config/lmch/parameters.yaml.dist app/config/lmch/parameters.yaml"'
 
 # indi
 # -------------------------------------------------------------------------------------------------
