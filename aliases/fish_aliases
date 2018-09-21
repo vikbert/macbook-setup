@@ -215,6 +215,7 @@ alias kt-unit='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vend
 alias kt-functional='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/bin/phpunit tests/Functional  " '
 alias kt-test='kt-unit; and kt-functional'
 alias kt-behat='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/bin/behat -p ci --tags \'smoke\'   " '
+alias kt-admin='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; APP_PORTAL=koza bin/console kochzauber:user:create admin admin@test.de; APP_PORTAL=lmch bin/console kochzauber:user:create admin admin@test.de;"'
 alias kcs='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/bin/php-cs-fixer fix  -v 2> /dev/null; "'
 alias kinit='k; and vagrant ssh -c "echo \'cd /var/www/virtual/platform/current/\' >> .bashrc"'
 alias ksetup='k; and vagrant ssh -c "bash /opt/lidl/ansible/kozang-setup-apps.sh"'
