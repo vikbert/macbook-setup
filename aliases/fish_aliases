@@ -208,7 +208,7 @@ alias dreminder='cd ~/sites/github/dreminder; code .'
 # koza tests
 # -------------------------------------------------------------------------------------------------
 function kt
-  k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/bin/phpunit --filter $argv"
+  k; and vagrant ssh -c "APP_PORTAL=koza SETUP_BROKER=1 php /var/www/virtual/platform/current/vendor/bin/phpunit --filter $argv"
 end
 
 alias kt-unit='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/bin/phpunit tests/Unit" '
