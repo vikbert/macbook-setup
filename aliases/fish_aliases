@@ -219,7 +219,10 @@ alias kt-unit='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vend
 alias kt-functional='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/bin/phpunit tests/Functional" '
 alias kt-integration='k; and vagrant ssh -c "APP_PORTAL=koza SETUP_BROKER=1 php /var/www/virtual/platform/current/vendor/bin/phpunit tests/Integration" '
 alias kt-tests='kt-unit; and kt-functional; and kt-integration'
-alias kt-behat='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/bin/behat -p ci --tags \'smoke\'   " '
+function kt-behat
+  k; and vagrant ssh -c "APP_PORTAL=lmch bash /var/www/virtual/platform/current/bin/behat -p lmch_ci --tags ~@postfinance"
+end
+#alias kt-behat='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/bin/behat -p ci --tags \'smoke\'   " '
 alias kt-admin='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; APP_PORTAL=koza bin/console kochzauber:user:create admin admin@test.de; APP_PORTAL=lmch bin/console kochzauber:user:create admin admin@test.de;"'
 alias kcs='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/bin/php-cs-fixer fix  -v 2> /dev/null; php vendor/bin/phpstan analyse -c phpstan.neon -l 1 src/"'
 alias kinit='k; and vagrant ssh -c "echo \'cd /var/www/virtual/platform/current/\' >> .bashrc"'
