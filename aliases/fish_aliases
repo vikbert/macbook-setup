@@ -220,7 +220,10 @@ alias kt-functional='k; and vagrant ssh -c "php /var/www/virtual/platform/curren
 alias kt-integration='k; and vagrant ssh -c "APP_PORTAL=koza SETUP_BROKER=1 php /var/www/virtual/platform/current/vendor/bin/phpunit tests/Integration" '
 alias kt-tests='kt-unit; and kt-functional; and kt-integration'
 function kt-behat
-  k; and vagrant ssh -c "APP_PORTAL=lmch bash /var/www/virtual/platform/current/bin/behat -p lmch_ci --tags ~@postfinance"
+  LMCH_CI="APP_PORTAL=lmch bash /var/www/virtual/platform/current/bin/behat -p lmch_ci --tags ~@postfinance"
+  KOZA_CI="APP_PORTAL=koza bash /var/www/virtual/platform/current/bin/behat -p koza_ci --tags ~@postfinance"
+  KOZA_API="APP_PORTAL=koza bash /var/www/virtual/platform/current/bin/behat -p api --tags ~@postfinance"
+  k; and vagrant ssh -c "$LMCH_CI; $KOZA_CI; $KOZA_API"
 end
 #alias kt-behat='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/bin/behat -p ci --tags \'smoke\'   " '
 alias kt-admin='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; APP_PORTAL=koza bin/console kochzauber:user:create admin admin@test.de; APP_PORTAL=lmch bin/console kochzauber:user:create admin admin@test.de;"'
