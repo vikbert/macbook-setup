@@ -252,3 +252,6 @@ alias log='bash ~/sites/shell/monitoring/logging.sh'
 
 # github projects
 alias sf4='cd /Users/xzhou/sites/github/sf4-starter'
+
+# alias for software
+alias peco='pecoup'
