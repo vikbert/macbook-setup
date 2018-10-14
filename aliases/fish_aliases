@@ -203,7 +203,7 @@ alias k='cd /Users/xzhou/lidl/kochzauber'
 alias r='cd ~/lidl/research-day'
 alias kssh='k; and vssh'
 alias wiki='cd ~/sites/bitbucket/vikbert.bitbucket.io; code .; and cd ..; and docute vikbert.bitbucket.io'
-alias io='cd ~/sites/github/vikbert.github.io; code .; and cd ..; and docute vikbert.github.io'
+alias io='cd ~/sites/github/vikbert.github.io; code .; and cd ..; and docsify serve vikbert.github.io'
 alias dreminder='cd ~/sites/github/dreminder; code .'
 
 
