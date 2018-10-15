@@ -194,7 +194,7 @@ alias php71="brew unlink php56; and brew link php71; and php -v"
 
 # kochzauber
 # -------------------------------------------------------------------------------------------------
-alias hello="k; and vagrant up"
+alias hello="k; and vagrant up; kt-queue"
 alias bye='k; and vagrant halt; x '
 alias hs='history | grep '
 alias job='env EDITOR=vim crontab -e'
@@ -207,7 +207,7 @@ alias io='cd ~/sites/github/vikbert.github.io; code .; and docsify serve .'
 alias dreminder='cd ~/sites/github/dreminder; code .'
 
 
-# koza tests
+# koza Lidl 
 # -------------------------------------------------------------------------------------------------
 function kt
   k; and vagrant ssh -c "APP_PORTAL=koza SETUP_BROKER=1 php /var/www/virtual/platform/current/vendor/bin/phpunit --filter $argv"
@@ -228,13 +228,12 @@ function kt-behat
   k; and vagrant ssh -c "$LMCH_CI; $KOZA_CI; $KOZA_API"
 end
 #alias kt-behat='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/bin/behat -p ci --tags \'smoke\'   " '
-alias kt-admin='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; APP_PORTAL=koza bin/console kochzauber:user:create admin admin@test.de; APP_PORTAL=lmch bin/console kochzauber:user:create admin admin@test.de;"'
 alias kcs='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/bin/php-cs-fixer fix  -v 2> /dev/null; php vendor/bin/phpstan analyse -c phpstan.neon -l 1 src/"'
 alias kinit='k; and vagrant ssh -c "echo \'cd /var/www/virtual/platform/current/\' >> .bashrc"'
 alias ksetup='k; and vagrant ssh -c "bash /opt/lidl/ansible/kozang-setup-apps.sh"'
 alias kcc='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; APP_PORTAL=koza bin/console cache:clear"'
 alias kconfig='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; yes | cp -rf app/config/koza/parameters.yaml.dist app/config/koza/parameters.yaml; yes | cp -rf app/config/lmch/parameters.yaml.dist app/config/lmch/parameters.yaml"'
-alias kt-queue='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; sudo systemctl restart queue-consumer-koza-router.service; sudo systemctl restart queue-consumer-koza-mailing.service; systemctl restart queue-consumer-koza-cutoff.service;"'
+alias kqueue='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; sudo systemctl restart queue-consumer-koza-router.service; sudo systemctl restart queue-consumer-koza-mailing.service; sudo systemctl restart queue-consumer-koza-cutoff.service;"'
 
 # indi
 # -------------------------------------------------------------------------------------------------
@@ -249,11 +248,8 @@ alias grafana='cd /Users/xzhou/lidl/research-day/grafana/vagrant-grafana-graphit
 # Monitoring
 # -------------------------------------------------------------------------------------------------
 alias shell='cd /Users/xzhou/sites/shell/monitoring; and atom .'
-alias m-consumer='bash ~/sites/shell/monitoring/queue.sh'
 alias log='bash ~/sites/shell/monitoring/logging.sh'
 
 # github projects
 alias sf4='cd /Users/xzhou/sites/github/sf4-starter'
 
-# alias for software
-alias peco='pecoup'
