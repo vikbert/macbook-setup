@@ -234,6 +234,7 @@ alias kinit='k; and vagrant ssh -c "echo \'cd /var/www/virtual/platform/current/
 alias ksetup='k; and vagrant ssh -c "bash /opt/lidl/ansible/kozang-setup-apps.sh"'
 alias kcc='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; APP_PORTAL=koza bin/console cache:clear"'
 alias kconfig='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; yes | cp -rf app/config/koza/parameters.yaml.dist app/config/koza/parameters.yaml; yes | cp -rf app/config/lmch/parameters.yaml.dist app/config/lmch/parameters.yaml"'
+alias kt-queue='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; sudo systemctl restart queue-consumer-koza-router.service; sudo systemctl restart queue-consumer-koza-mailing.service; systemctl restart queue-consumer-koza-cutoff.service;"'
 
 # indi
 # -------------------------------------------------------------------------------------------------
