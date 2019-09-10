@@ -1,6 +1,5 @@
 #!/usr/local/bin/fish
 export LSCOLORS="exfxcxdxbxegedabagacad"
-
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
