@@ -1,12 +1,47 @@
 #!/usr/local/bin/fish
 export LSCOLORS="exfxcxdxbxegedabagacad"
-export CHEAT_EDITOR="/usr/local/bin/mvim -v"
+
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # 定义vim 到 mvim
-alias vi='/usr/local/bin/mvim -v'
-alias vim='/usr/local/bin/mvim -v'
 alias ce='export VISUAL=vim; crontab -e'
+
+# chrome shortcut 
+# -------------------------------------------------------------------------------------------------
+alias fo='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --app=http://vertriebsportal.localhost:8080'
+
+# paths github
+# -------------------------------------------------------------------------------------------------
+alias github='cd ~/sites/github/' 
+alias dianzi='cd ~/sites/github/dianzi; code .' 
+alias zaobao='cd ~/sites/github/zaobao; code .'
+alias meiri='cd ~/sites/github/meiri; code .'
+alias life='cd ~/sites/github/lifegrid; code .'
+
+# paths SMS
+# -------------------------------------------------------------------------------------------------
+alias sms='cd ~/lidl/carsales'
+alias fe='cd ~/lidl/carsales/app/_frontend'
+alias fd='fe; y devserver'
+alias ft='fe; y test'
+alias ff='fe; node_modules/.bin/eslint --fix .'
+
+function fup 
+  sms 
+  docker-compose start nginx
+  docker-compose start php
+  docker-compose start db
+end
+
+function fstop 
+  sms
+  docker-compose stop nginx
+  docker-compose stop php
+  docker-compose stop db
+end
 
 # utilities
 # -------------------------------------------------------------------------------------------------
@@ -40,8 +75,11 @@ alias ss='cat ~/.ssh/config'
 
 # yarn
 # -------------------------------------------------------------------------------------------------
+alias y='yarn'
 alias yi='yarn install'
+alias ys='yarn start'
 alias ya='yarn global add'
+alias yd='yarn deploy'
 
 # brew
 # -------------------------------------------------------------------------------------------------
@@ -55,10 +93,6 @@ alias d="axel -n 10 -a"
 alias g='googler --colors bjcxxy -n 8'
 alias pw="pwgen"
 
-# mobile development
-# -------------------------------------------------------------------------------------------------
-alias we='weex'
-
 # music video
 # -------------------------------------------------------------------------------------------------
 alias youtube="mpsyt"
@@ -68,23 +102,19 @@ alias youtube="mpsyt"
 alias ..="cd ..; and  ls"
 alias ...="cd ../..; and  ls"
 alias version='echo nodejs; and  node -v; and  echo npm; and  npm -v; and  php -v; and  docker -v; and  zsh --version'
-alias dusort='du -sckx * | sort -nr'
-alias bk='cd $OLDPWD'
-alias ttop='top -ocpu -R -F -s 2 -n30'
 alias lh='ls -a | egrep "^\."'
 alias l='ls -alh'
 alias h='cd ~'
 alias c='clear'
 alias x="exit"
-alias ae='vi ~/sites/awesome-macbook-setup/aliases/fish_aliases'
-alias au='source ~/sites/awesome-macbook-setup/aliases/fish_aliases'
+alias ae='vi ~/sites/github/awesome-macbook-setup/aliases/fish_aliases'
+alias au='source ~/sites/github/awesome-macbook-setup/aliases/fish_aliases'
 alias as='alias | grep '
+alias f='fish'
 
-alias ds_clean="find . -name '*.DS_Store' -type f -ls -delete"
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true; and killall Finder"
 alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false; and killall Finder"
 alias et="rm -rfv ~/.Trash"
-alias rr="rm -rf "
 
 # tree
 # -------------------------------------------------------------------------------------------------
@@ -94,73 +124,57 @@ alias t3='tree -L 3 .'
 
 # Git
 # -------------------------------------------------------------------------------------------------
-alias gr='git remote -v'
-alias grp='git remote prune origin; and  gb'
-alias gbd='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
+alias gt='git tag '
 alias ga='git add '
 alias gp='git push'
-alias gup='git push --set-upstream origin '
-alias gpa='git add -A; git commit -m "updates"; and git push -f'
 alias gst='git status'
 alias gm='git commit -m'
-alias gam='git pull; and git add .; and git commit --amend --no-edit; and git push -f'
-alias gba='git branch -v -a'
+
 alias gb='git branch'
+alias gbr='git branch -r'
+alias gba='git branch -v -a'
+
 alias gc='git checkout'
 alias gcb='git checkout -b '
+
 alias gu='git pull'
+alias gur='git pull --rebase'
+
 alias gcl='git clone'
 alias gf='git reflog'
 alias gl="git log --graph --decorate"
-alias gmnf="git merge --no-ff"
 alias greset='git reset --hard HEAD'
 alias gtags='git ls-remote --tags'
-alias gfc='git log -1 --format="%an %ae%n%cn %ce" '
 
+alias gsl='git stash list'
+alias gss='git stash save '
+alias gsa='git stash apply'
 
 # flutter * dart
 # -------------------------------------------------------------------------------------------------
 alias ios="open -a Simulator"
-alias f='cd /Users/xzhou/sites/flutterProjects; and ls -al'
 function fcreate --description "create flutter project and enter there"
     flutter create $argv; and f; and cd $argv; and ls -al;
 end
 alias fdevices="flutter devices"
 alias frun="flutter run"
 
-
-# Editor
-# -------------------------------------------------------------------------------------------------
-alias a="/usr/local/bin/atom"
-
 # vagrant
 # -------------------------------------------------------------------------------------------------
 alias vssh="vagrant ssh"
 alias vup="vagrant up"
 
-# composer
-# -------------------------------------------------------------------------------------------------
-alias cb='composer browse'
-alias cu='composer update'
-alias cr='composer req'
-
-# Symfony
-# -------------------------------------------------------------------------------------------------
-alias cc='bin/console c:c'
-alias ccc='bin/console c:c; and bin/console --env=prod c:c'
-alias dev='bin/console --env=dev'
-alias prod='bin/console --env=prod'
-
 # docker-compose
 # -------------------------------------------------------------------------------------------------
 alias dstart='docker-compose start'
-alias dup='docker-compose up -d'
+alias dlogs='docker-compose logs -tf'
+alias dup='docker-compose up -d; dlogs'
+alias ddown="docker-compose down"
 alias dstop='docker-compose stop'
-alias dlog='docker-compose logs'
 
 # docker
 # -------------------------------------------------------------------------------------------------
-alias dps='docker ps -a'
+alias dps='docker ps'
 alias dia="docker images -a"
 alias drmi="docker rmi -f"
 alias drm="docker rm -f"
@@ -169,16 +183,9 @@ alias drm="docker rm -f"
 # -------------------------------------------------------------------------------------------------
 alias ts='tig status'
 
-# stretchly: a tool for make a good break
-# -------------------------------------------------------------------------------------------------
-alias stretchly_edit='vi ~/sites/github/stretchly/app/utils/'
-alias stretchly_build='cd ~/sites/github/stretchly; and npm run dist '
-
 # github
 # -------------------------------------------------------------------------------------------------
-alias github='cd ~/sites/github; and ls -al'
 alias github_config='git config user.name "Xun Zhou"; and git config user.email "segentor@gmail.com"'
-alias bitbucket='cd ~/sites/bitbucket; and ls -al'
 
 # curl cheat.sh
 # -------------------------------------------------------------------------------------------------
@@ -186,70 +193,9 @@ function ch
   curl cheat.sh/$argv
 end
 
-
-# php
+# PluraSight download
 # -------------------------------------------------------------------------------------------------
-alias php56="brew unlink php71; and brew link php56; and php -v"
-alias php71="brew unlink php56; and brew link php71; and php -v"
-
-# kochzauber
-# -------------------------------------------------------------------------------------------------
-alias hello="k; and vagrant up; kt-queue"
-alias bye='k; and vagrant halt; x '
-alias hs='history | grep '
-alias job='env EDITOR=vim crontab -e'
-
-alias k='cd /Users/xzhou/lidl/kochzauber'
-alias r='cd ~/lidl/research-day'
-alias kssh='k; and vssh'
-alias wiki='cd ~/sites/bitbucket/vikbert.bitbucket.io; code .; and cd ..; and docute vikbert.bitbucket.io'
-alias io='cd ~/sites/github/vikbert.github.io; code .; and docsify serve .'
-alias dreminder='cd ~/sites/github/dreminder; code .'
-
-
-# koza Lidl 
-# -------------------------------------------------------------------------------------------------
-function kt
-  k; and vagrant ssh -c "APP_PORTAL=koza SETUP_BROKER=1 php /var/www/virtual/platform/current/vendor/bin/phpunit --filter $argv"
+function sight
+  cd ~/Movies/plura_sight
+  youtube-dl --username "xun.zhou@lidl.com" --password "Albert&22912" --verbose --sleep-interval 120 "$argv"
 end
-function ktx
-  k; and vagrant ssh -c "APP_PORTAL=koza SETUP_BROKER=1 php-xdebug /var/www/virtual/platform/current/vendor/bin/phpunit --filter $argv"
-end
-
-
-alias kt-unit='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/bin/phpunit tests/Unit" '
-alias kt-functional='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/bin/phpunit tests/Functional" '
-alias kt-integration='k; and vagrant ssh -c "APP_PORTAL=koza SETUP_BROKER=1 php /var/www/virtual/platform/current/vendor/bin/phpunit tests/Integration" '
-alias kt-tests='kt-unit; and kt-functional; and kt-integration'
-function kt-behat
-  set LMCH_CI "APP_PORTAL=lmch bash /var/www/virtual/platform/current/bin/behat -p lmch_ci --tags ~@postfinance"
-  set KOZA_CI "APP_PORTAL=koza bash /var/www/virtual/platform/current/bin/behat -p koza_ci --tags ~@postfinance"
-  set KOZA_API "APP_PORTAL=koza bash /var/www/virtual/platform/current/bin/behat -p api --tags ~@postfinance"
-  k; and vagrant ssh -c "$LMCH_CI; $KOZA_CI; $KOZA_API"
-end
-#alias kt-behat='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/bin/behat -p ci --tags \'smoke\'   " '
-alias kcs='k; and vagrant ssh -c "php /var/www/virtual/platform/current/vendor/bin/php-cs-fixer fix  -v 2> /dev/null; php vendor/bin/phpstan analyse -c phpstan.neon -l 1 src/"'
-alias kinit='k; and vagrant ssh -c "echo \'cd /var/www/virtual/platform/current/\' >> .bashrc"'
-alias ksetup='k; and vagrant ssh -c "bash /opt/lidl/ansible/kozang-setup-apps.sh"'
-alias kcc='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; APP_PORTAL=koza bin/console cache:clear"'
-alias kconfig='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; yes | cp -rf app/config/koza/parameters.yaml.dist app/config/koza/parameters.yaml; yes | cp -rf app/config/lmch/parameters.yaml.dist app/config/lmch/parameters.yaml"'
-alias kqueue='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; sudo systemctl restart queue-consumer-koza-router.service; sudo systemctl restart queue-consumer-koza-mailing.service; sudo systemctl restart queue-consumer-koza-cutoff.service;"'
-
-# indi
-# -------------------------------------------------------------------------------------------------
-alias icc='k; and vagrant ssh -c "cd /var/www/virtual/platform/current/; APP_PORTAL=indi bin/console cache:clear"'
-alias igulp='k; rm -rf  core/assets/indi/fonts         core/assets/indi/images         core/assets/indi/tmp         core/assets/indi/css         core/assets/indi/js         core/assets/indi/sprites; and vagrant ssh -c "cd /var/www/virtual/platform/current/; APP_PORTAL=indi npm run gulp:dev;"'
-
-# grafana research
-# -------------------------------------------------------------------------------------------------
-alias grafana='cd /Users/xzhou/lidl/research-day/grafana/vagrant-grafana-graphite'
-
-
-# Monitoring
-# -------------------------------------------------------------------------------------------------
-alias shell='cd /Users/xzhou/sites/shell/monitoring; and atom .'
-alias log='bash ~/sites/shell/monitoring/logging.sh'
-
-# github projects
-alias sf4='cd /Users/xzhou/sites/github/sf4-starter'
-
