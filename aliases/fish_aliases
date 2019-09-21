@@ -26,6 +26,7 @@ alias life='cd ~/sites/github/lifegrid; code .'
 # paths SMS
 # -------------------------------------------------------------------------------------------------
 alias sms='cd ~/lidl/carsales'
+alias be='sms'
 alias run='sms; bash run.sh '
 alias run:behat='sms; bash run.sh test:behat'
 alias fe='cd ~/lidl/carsales/app/_frontend'
