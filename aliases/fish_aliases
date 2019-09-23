@@ -19,6 +19,7 @@ alias meiri='cd ~/sites/github/meiri; code .'
 alias life='cd ~/sites/github/lifegrid; code .'
 alias nines='cd ~/sites/github/nines; code .'
 alias pattern='cd ~/sites/github/react-pattern; code .'
+alias minimal='cd ~/sites/github/minimal-react-starter; code .'
 
 # paths SMS
 # -------------------------------------------------------------------------------------------------
