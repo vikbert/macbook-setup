@@ -1,12 +1,8 @@
 #!/usr/local/bin/fish
-#export LSCOLORS="exfxcxdxbxegedabagacad"
-export PATH="/usr/local/sbin:$PATH"
-#export PATH="/usr/local/opt/icu4c/bin:$PATH"
-#export PATH="$PATH:$HOME/.rvm/bin"
-#export PATH="$PATH:$HOME/.composer/vendor/bin"
+source ~/.bash_profile
 
-set -x LC_ALL en_US.UTF-8
-
+#export PATH="/usr/local/sbin:$PATH"
+#set -x LC_ALL en_US.UTF-8
 
 # 定义vim 到 mvim
 alias ce='export VISUAL=vim; crontab -e'
@@ -39,24 +35,12 @@ alias bt='sms; bash run.sh test:phpunit --filter= '
 
 function hello 
   sms 
-  docker-compose start php
-  docker-compose start db
-  docker-compose start nginx
-  docker-compose start chrome
-  docker-compose start db_test
-  docker-compose start mailcatcher_test
-  docker-compose start api_mock
+  docker-compose up -d
 end
 
 function ciao 
   sms
-  docker-compose stop nginx
-  docker-compose stop php
-  docker-compose stop db
-  docker-compose stop chrome
-  docker-compose stop db_test
-  docker-compose stop mailcatcher_test
-  docker-compose stop api_mock
+  docker-compose stop
 end
 
 # utilities
@@ -127,6 +111,7 @@ alias c='clear'
 alias x="exit"
 alias ae='vi ~/sites/github/awesome-macbook-setup/aliases/fish_aliases'
 alias au='source ~/sites/github/awesome-macbook-setup/aliases/fish_aliases'
+alias ap='cd ~/sites/github/awesome-macbook-setup/; and ga .; and gm "update aliases"; and git push -f'
 alias as='alias | grep '
 alias f='fish'
 
