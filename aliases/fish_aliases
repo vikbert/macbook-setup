@@ -1,8 +1,7 @@
 #!/usr/local/bin/fish
-source ~/.bash_profile
 
-#export PATH="/usr/local/sbin:$PATH"
-#set -x LC_ALL en_US.UTF-8
+# load the defined PATH variables in ~/.bash_profile; e.g. PATH for php@72
+source ~/.bash_profile
 
 # 定义vim 到 mvim
 alias ce='export VISUAL=vim; crontab -e'
