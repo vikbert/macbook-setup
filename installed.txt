@@ -1,0 +1,16 @@
+[OK] Homebrew caskroom
+[OK] tree
+[OK] wget
+[OK] node
+[OK] yarn
+[OK] pwgen
+[OK] tig
+[OK] alfred
+[OK] iterm2
+[OK] lepton
+[OK] slack
+[OK] sequel-pro
+[OK] composer
+[OK] fish
+[OK] fish shell
+[OK] omf detected!
