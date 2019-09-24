@@ -53,6 +53,13 @@ function cask_virtualization_tools() {
     cask_install docker
     cask_install kitematic
 }
+function cask_fira_fonts() {
+    brew tap caskroom/fonts
+    cask_install font-fira-code
+    cask_install font-fira-mono
+    cask_install font-fira-mono-for-powerline
+    cask_install font-fira-sans
+}
 function install_php72() {
     brew tap homebrew/homebrew-php
     brew unlink php71
@@ -73,12 +80,12 @@ function install_mpsyt_player() {
 }
 
 rm -rf installed.txt
-
-install_update_brew
-brew_install_apps
 # cask_virtualization_tools
 # install_mpsyt_player
+install_update_brew
+brew_install_apps
 cask_install_apps
+cask_fira_fonts
 install_composer
 install_fish_shell
 brew update && brew cleanup; brew doctor
