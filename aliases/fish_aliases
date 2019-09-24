@@ -33,6 +33,14 @@ alias ft='fe; y test'
 alias ff='fe; node_modules/.bin/eslint --fix .'
 alias bt='sms; bash run.sh test:phpunit --filter= '
 
+function db
+    sms
+    docker-compose run --rm php bin/console doctrine:database:drop --if-exists -n --force
+    docker-compose run --rm php bin/console doctrine:database:create --if-not-exists -n
+    docker-compose run --rm php bin/console doctrine:migrations:migrate -vvv -n
+    docker-compose run --rm php bin/console carsales:fixtures:load -n
+end
+
 function hello 
   sms 
   docker-compose up -d
@@ -90,8 +98,7 @@ alias bs='brew search'
 
 # TOOLs Software
 # -------------------------------------------------------------------------------------------------
-alias mx='cmatrix'
-alias d="axel -n 10 -a"
+alias download="axel -n 10 -a"
 alias g='googler --colors bjcxxy -n 8'
 alias pw="pwgen"
 
@@ -110,7 +117,7 @@ alias h='cd ~'
 alias c='clear'
 alias x="exit"
 alias ap='cd ~/sites/github/awesome-macbook-setup/; and ga .; and gm "update aliases"; and git push -f'
-alias au='source ~/sites/github/awesome-macbook-setup/aliases/fish_aliases'
+alias au='source ~/sites/github/awesome-macbook-setup/aliases/fish_aliases; echo "aliases updated!"'
 alias ae='vi ~/sites/github/awesome-macbook-setup/aliases/fish_aliases'
 alias as='alias | grep '
 alias f='fish'
