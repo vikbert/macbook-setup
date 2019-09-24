@@ -73,6 +73,7 @@ function install_mpsyt_player() {
 }
 
 rm -rf installed.txt
+
 install_update_brew
 brew_install_apps
 # cask_virtualization_tools
