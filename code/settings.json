@@ -1,0 +1,93 @@
+{
+    // global
+    "files.exclude": {
+      "**/.DS_Store": true,
+      "**/.git": true,
+      "**/.hg": true,
+      "**/.idea": true,
+      "**/.svn": true,
+      "**/CVS": true
+    },
+    "window.zoomLevel": 1,
+    "explorer.confirmDelete": true,
+  
+  
+    // Terminal: change shell
+    "terminal.integrated.fontFamily": "Fira Code",
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.fontWeightBold": "normal",
+    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorBlinking": true,
+  
+  
+    // workbench
+    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.colorTheme": "New Moon",
+    "workbench.activityBar.visible": false,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "workbench.sideBar.location": "left",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorCustomizations": {
+      "terminal.ansiBlue": "#8697e3",
+      "terminal.background": "#333131",
+      "[Sublime Material Theme - Dark]": {
+        "editor.background": "#2b2a2a"
+      }
+    },
+  
+  
+    // git
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+  
+  
+    // editor
+    "editor.fontSize": 13,
+    "editor.quickSuggestionsDelay": 5,
+    "editor.tabCompletion": "on",
+    "editor.formatOnPaste": true,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "Fira Code",
+    "editor.wordWrapColumn": 120,
+    "editor.formatOnType": true,
+    "editor.fontWeight": "300",
+    "editor.letterSpacing": -0.5,
+    "editor.renderControlCharacters": false,
+    "editor.formatOnSave": false,
+    "editor.minimap.enabled": false,
+    "editor.glyphMargin": false,
+    "breadcrumbs.enabled": true,
+  
+  
+    // coding format and auto completation
+    "[markdown]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+   // "[javascript]": {
+   //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+   // },
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "prettier.arrowParens": "always",
+    "prettier.singleQuote": true,
+    "diffEditor.ignoreTrimWhitespace": true,
+  
+    // auto save
+    "files.autoSave": "off",
+  
+    // eslint
+    "eslint.trace.server": "messages",
+    "eslint.autoFixOnSave": true,
+  
+    // vim
+    "vim.insertModeKeyBindings": [{
+      "before": ["j","k"],
+      "after": ["<Esc>"]
+    }]
+  }

@@ -138,6 +138,7 @@ alias t3='tree -L 3 .'
 # -------------------------------------------------------------------------------------------------
 alias gt='git tag '
 alias ga='git add '
+alias gap='git add .; and git commit -m "new update"; git push -f '
 alias gp='git push'
 alias gst='git status'
 alias gm='git commit -m'
