@@ -118,9 +118,9 @@ alias l='ls -alh'
 alias h='cd ~'
 alias c='clear'
 alias x="exit"
-alias ap='cd ~/sites/github/awesome-macbook-setup/; and ga .; and gm "update aliases"; and git push -f'
-alias au='source ~/sites/github/awesome-macbook-setup/aliases/fish_aliases; echo "aliases updated!"'
-alias ae='vi ~/sites/github/awesome-macbook-setup/aliases/fish_aliases'
+alias ap='cd ~/sites/github/awesome-macbook-setup/; and ga .; and gm "update fish aliases"; and git push -f'
+alias au='source ~/sites/github/awesome-macbook-setup/fish/config.fish; echo "fish aliases updated!"'
+alias ae='vi ~/sites/github/awesome-macbook-setup/fish/config.fish'
 alias as='alias | grep '
 alias f='fish'
 
