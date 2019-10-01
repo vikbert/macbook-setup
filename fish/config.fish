@@ -21,6 +21,9 @@ alias nines='cd ~/sites/github/nines; code .'
 alias pattern='cd ~/sites/github/react-pattern; code .'
 alias minimal='cd ~/sites/github/minimal-react-starter; code .'
 
+# React
+alias react:mini='github; git clone https://github.com/vikbert/minimal-react-starter.git -s '
+
 # paths SMS
 # -------------------------------------------------------------------------------------------------
 alias sms='cd ~/lidl/carsales'
@@ -30,8 +33,10 @@ alias run:behat='sms; bash run.sh test:behat'
 alias fe='cd ~/lidl/carsales/app/_frontend'
 alias fd='fe; y devserver'
 alias ft='fe; y test'
+alias mjest='fe; majestic --app'
 alias ff='fe; node_modules/.bin/eslint --fix .'
 alias bt='sms; bash run.sh test:phpunit --filter= '
+alias bta='sms; bash run.sh test:phpunit '
 
 function db
     sms
@@ -58,7 +63,7 @@ function localip --description "show local IP of your maschine"
 end
 
 function publicip --description "show public IP of your machine"
-    curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+'
+    curl ifconfig.me
 end
 
 function randpw --description "generate a random password"
@@ -141,6 +146,7 @@ alias ga='git add '
 alias gap='git add .; and git commit -m "updates"; git push -f'
 
 alias gp='git push'
+alias gpr='git push -u origin master'
 alias gst='git status'
 alias gm='git commit -m'
 alias gm-date='git commit --amend --date='
