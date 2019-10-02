@@ -35,7 +35,8 @@ alias fd='fe; y devserver'
 alias ft='fe; y test'
 alias mjest='fe; majestic --app'
 alias ff='fe; node_modules/.bin/eslint --fix .'
-alias bt='sms; bash run.sh test:phpunit --filter= '
+alias btf='sms; bash run.sh test:phpunit --filter='
+alias btg='sms; bash run.sh test:phpunit --group='
 alias bta='sms; bash run.sh test:phpunit '
 
 function db
