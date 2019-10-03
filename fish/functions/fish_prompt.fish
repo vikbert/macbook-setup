@@ -16,6 +16,13 @@ function fish_prompt
 	__sf_util_set_default SPACEFISH_PROMPT_ORDER time user dir host git package node ruby golang php rust haskell julia elixir docker aws venv conda pyenv dotnet kubecontext exec_time line_sep battery vi_mode jobs exit_code char
 
 	# ------------------------------------------------------------------------------
+	# xzhou
+	# ------------------------------------------------------------------------------
+	# __sf_util_set_default SPACEFISH_PACKAGE_SHOW true
+	# __sf_util_set_default SPACEFISH_NODE_SHOW false
+	# __sf_util_set_default SPACEFISH_DOCKER_SHOW false
+
+	# ------------------------------------------------------------------------------
 	# Sections
 	# ------------------------------------------------------------------------------
 
