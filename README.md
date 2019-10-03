@@ -38,12 +38,12 @@ bash  install.sh
 
 > install plugin `Settings Sync` to sync the existing VS code setting from gist from github
 
-`CMD+shift+x` and install extension `settings Sync`
+"[CMD+shift+x]" and install extension "settings Sync"
 
 > import/overwrite `settting.json`
 
-`CMD+shift+p` and open with `open settings(JSON)`, then copy and paster the content to `settings.json` within the editor
+"[CMD+shift+p]" and open with "open settings(JSON)", then copy and paster the content to "settings.json" within the editor
 
 > import the snippets from `markdown.json`
 
-`CMD+shift+p` to open with `user snippets`, and select `markdown.json` the code snippets to the plugin `markdown all in one`.
+"[CMD+shift+p]" to open with "user snippets", and select "markdown.json" the code snippets to the plugin "markdown all in one".
