@@ -1,5 +1,11 @@
 #!/usr/local/bin/fish
 
+# ensure starting fish shell in tmux
+if status is-interactive
+and not set -q TMUX
+    exec tmux
+end
+
 # load the defined PATH variables in ~/.bash_profile; e.g. PATH for php@72
 source ~/.bash_profile
 
@@ -113,7 +119,7 @@ alias pw="pwgen"
 alias ..="cd ..; and  ls"
 alias ...="cd ../..; and  ls"
 alias version='echo nodejs; and  node -v; and  echo npm; and  npm -v; and  php -v; and  docker -v; and  zsh --version'
-alias lh='ls -a | egrep "^\."'
+alias lk='ls -a | egrep "^\."'
 alias l='ls -alh'
 alias h='cd ~'
 alias c='clear'
