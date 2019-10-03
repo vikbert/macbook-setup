@@ -12,7 +12,7 @@ alias fo='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --app=h
 
 # paths github
 # -------------------------------------------------------------------------------------------------
-alias github='cd ~/sites/github/' 
+alias gh='cd ~/sites/github/' 
 alias dianzi='cd ~/sites/github/dianzi; code .' 
 alias zaobao='cd ~/sites/github/zaobao; code .'
 alias meiri='cd ~/sites/github/meiri; code .'
