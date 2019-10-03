@@ -18,9 +18,9 @@ function fish_prompt
 	# ------------------------------------------------------------------------------
 	# xzhou
 	# ------------------------------------------------------------------------------
-	# __sf_util_set_default SPACEFISH_PACKAGE_SHOW true
-	# __sf_util_set_default SPACEFISH_NODE_SHOW false
-	# __sf_util_set_default SPACEFISH_DOCKER_SHOW false
+	__sf_util_set_default SPACEFISH_PACKAGE_SHOW false
+	__sf_util_set_default SPACEFISH_NODE_SHOW false
+	__sf_util_set_default SPACEFISH_DOCKER_SHOW false
 
 	# ------------------------------------------------------------------------------
 	# Sections
