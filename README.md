@@ -32,13 +32,17 @@ cd fish
 bash  install.sh
 ```
 
-> import the `color` file
+> import the `color` file for the shell profile
 
 ## 05 `VS-code`
 
-> import/overwrite settting.json
+> install plugin `Settings Sync` to sync the existing VS code setting from gist from github
 
-general settings for the `vs code` editor. Just copy and paster the content to `settings.json` within the editor
+`CMD+shift+x` and install extension `settings Sync`
+
+> import/overwrite `settting.json`
+
+`CMD+shift+p` and open with `open settings(JSON)`, then copy and paster the content to `settings.json` within the editor
 
 > import the snippets from `markdown.json`
 

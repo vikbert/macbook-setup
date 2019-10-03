@@ -125,6 +125,7 @@ alias as='alias | grep '
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true; and killall Finder"
 alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false; and killall Finder"
 alias et="rm -rfv ~/.Trash"
+alias clone_editorconfig='cp ~/sites/github/awesome-macbook-setup/.editorconfig .editorconfig'
 
 # tree
 # -------------------------------------------------------------------------------------------------
