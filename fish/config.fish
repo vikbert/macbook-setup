@@ -22,7 +22,7 @@ alias pattern='cd ~/sites/github/react-pattern; code .'
 alias minimal='cd ~/sites/github/minimal-react-starter; code .'
 
 # React
-alias react:mini='github; git clone https://github.com/vikbert/minimal-react-starter.git -s '
+alias react-create='github; git clone https://github.com/vikbert/minimal-react-starter.git -s '
 
 # paths SMS
 # -------------------------------------------------------------------------------------------------
@@ -39,7 +39,7 @@ alias btf='sms; bash run.sh test:phpunit --filter='
 alias btg='sms; bash run.sh test:phpunit --group='
 alias bta='sms; bash run.sh test:phpunit '
 
-function db
+function reset-db
     sms
     docker-compose run --rm php bin/console doctrine:database:drop --if-exists -n --force
     docker-compose run --rm php bin/console doctrine:database:create --if-not-exists -n
@@ -67,10 +67,6 @@ function publicip --description "show public IP of your machine"
     curl ifconfig.me
 end
 
-function randpw --description "generate a random password"
-  dd if=/dev/urandom bs=1 count=16 2>/dev/null | base64 | rev | cut -b 2- | rev
-end
-
 function pkill --description "pkill a process interactively"
   ps aux | peco | awk '{ print $2 }' | xargs kill
 end
@@ -85,7 +81,7 @@ alias restore_finder="cd ~/Library/Preferences; and  sudo find com.apple.finder.
 
 # COFNIG
 # -------------------------------------------------------------------------------------------------
-alias ss='cat ~/.ssh/config'
+alias ss='touch ~/.ssh/config; and cat ~/.ssh/config'
 
 # composer 
 # -------------------------------------------------------------------------------------------------
@@ -109,8 +105,6 @@ alias bs='brew search'
 
 # TOOLs Software
 # -------------------------------------------------------------------------------------------------
-alias download="axel -n 10 -a"
-alias g='googler --colors bjcxxy -n 8'
 alias pw="pwgen"
 
 
@@ -128,8 +122,6 @@ alias ap='cd ~/sites/github/awesome-macbook-setup/; and ga .; and gm "update fis
 alias au='source ~/sites/github/awesome-macbook-setup/fish/config.fish; echo "fish aliases updated!"'
 alias ae='vi ~/sites/github/awesome-macbook-setup/fish/config.fish'
 alias as='alias | grep '
-alias f='fish'
-
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true; and killall Finder"
 alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false; and killall Finder"
 alias et="rm -rfv ~/.Trash"
@@ -213,9 +205,9 @@ alias ts='tig status'
 # -------------------------------------------------------------------------------------------------
 alias github_config='git config user.name "Xun Zhou"; and git config user.email "segentor@gmail.com"'
 
-# curl cheat.sh
+# use "cheat" for detect the usage of comand
 # -------------------------------------------------------------------------------------------------
-function ch
+function cheat
   curl cheat.sh/$argv
 end
 
