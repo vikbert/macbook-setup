@@ -10,6 +10,7 @@
 [OK] lepton
 [OK] slack
 [OK] sequel-pro
+[OK] font-fira-code
 [OK] composer
 [OK] fish
 [OK] fish shell

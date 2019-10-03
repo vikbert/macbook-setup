@@ -1,86 +1,58 @@
 {
     "tip": {
         "prefix": "tip",
-        "body": [
-            "::: tip$1\n$2:::"
-        ]
+        "body": ["::: tip$1\n$2:::"]
     },
     "warning": {
         "prefix": "warning",
-        "body": [
-            "::: warning$1\n$2:::"
-        ]
+        "body": ["::: warning$1\n$2:::"]
     },
     "danger": {
         "prefix": "danger",
-        "body": [
-            "::: danger$1\n$2:::"
-        ]
+        "body": ["::: danger$1\n$2:::"]
     },
     "js": {
         "prefix": "js",
-        "body": [
-            "```js\n $1 \n```\n"
-        ]
+        "body": ["```js\n $1 \n```\n"]
     },
     "php": {
         "prefix": "php",
-        "body": [
-            "```php\n $1 \n```\n"
-        ]
+        "body": ["```php\n $1 \n```\n"]
     },
     "bash": {
         "prefix": "bash",
-        "body": [
-            "```bash\n $1 \n```\n"
-        ]
+        "body": ["```bash\n $1 \n```\n"]
     },
     "image": {
         "prefix": "img",
-        "body": [
-            "![]($1)"
-        ]
+        "body": ["![]($1)"]
     },
     "header": {
         "prefix": "header",
-        "body": [
-            "\n<img class=\"page__header\" src=\"$1\" width=\"100%\"/>\n"
-        ]
+        "body": ["\n<img class=\"page__header\" src=\"$1\" width=\"100%\"/>\n"]
     },
     "github": {
         "prefix": "github",
-        "body": [
-            "🔥[**GitHub**] $1 <br>\n <$2>\n\n"
-        ]
+        "body": ["🔥[**GitHub**] $1 <br>\n <$2>\n\n"]
     },
     "book": {
         "prefix": "book",
-        "body": [
-            "| [$1]($2) | $3 |"
-        ]
+        "body": ["| [$1]($2) | $3 |"]
     },
     "article": {
         "prefix": "article",
-        "body": [
-            "🔥[**Article**] $1 <br>\n <$2>\n\n"
-        ]
+        "body": ["🔥[**Article**] $1 <br>\n <$2>\n\n"]
     },
     "idea": {
         "prefix": "idea",
-        "body": [
-            "🔥[**Idea**] $1 <br>\n <$2>\n\n"
-        ]
+        "body": ["🔥[**Idea**] $1 <br>\n <$2>\n\n"]
     },
     "video": {
         "prefix": "video",
-        "body": [
-            "🔥[**Video**] $1 <br>\n <$2>\n\n"
-        ]
+        "body": ["🔥[**Video**] $1 <br>\n <$2>\n\n"]
     },
     "table_row": {
         "prefix": "row",
-        "body": [
-            "| [$1]($2) | $3 |"
-        ]
+        "body": ["| [$1]($2) | $3 |"]
     }
 }
