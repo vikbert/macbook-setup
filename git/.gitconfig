@@ -1,12 +1,16 @@
 [user]
-	name = Xun Zhou
-	email = segentor@gmail.com
+name = Xun Zhou
+email = segentor@gmail.com
+
 [core]
-	excludesfile = /Users/vikbert/.gitignore_global
+excludesfile = /Users/vikbert/.gitignore_global
+
 [color]
-  # Use colors in Git commands that are capable of colored output when outputting to the terminal
-  ui = auto
+# Use colors in Git commands that are capable of
+# colored output when outputting to the terminal
+ui = auto
+
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+current = yellow reverse
+local = yellow
+remote = green

@@ -10,7 +10,7 @@ insert_final_newline = true
 
 # Matches multiple files with brace expansion notation
 # Set default charset
-[*.{js,json,php,yaml,yml}]
+[*.{js,json,php,yaml,yml,sh}]
 charset = utf-8
 indent_style = space
 indent_size = 4
@@ -20,6 +20,10 @@ indent_size = 4
 indent_style = space
 indent_size = 4
 
-# prettier
-useTabs = true
-tabWidth = 4
+[.gitconfig]
+indent_style = space
+indent_size = 4
+
+# # prettier
+# useTabs = true
+# tabWidth = 2

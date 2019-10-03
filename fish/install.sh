@@ -8,6 +8,11 @@ echo "create soft-link for command aliases."
 ln -s ./fish_variables ~/.config/fish/fish_variables
 echo "create soft-link for fish shell variable(this can define the color of fish shell prompt)."
 
+#### config the bash_profile
+ln -s ./.bash_profile ~/.config/fish/.bash_profile
+echo "overwrite bash_profile"
+
 #### show the final result
 ## 2x soft link should be created
 ls -alh ~/.config/fish
+ls -alh ~/

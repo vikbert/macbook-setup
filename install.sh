@@ -2,9 +2,9 @@
 source ./base.sh
 
 ############ install brew  ############
-function install_update_brew(){
+function install_update_brew() {
     which -s brew
-    if [[ $? != 0 ]] ; then
+    if [[ $? != 0 ]]; then
         # Install Homebrew
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
         doEcho "Homebrew"
@@ -88,4 +88,5 @@ cask_install_apps
 cask_fira_fonts
 install_composer
 install_fish_shell
-brew update && brew cleanup; brew doctor
+brew update && brew cleanup
+brew doctor
