@@ -1,11 +1,5 @@
 #!/usr/local/bin/fish
 
-# ensure starting fish shell in tmux
-if status is-interactive
-and not set -q TMUX
-    exec tmux
-end
-
 # load the defined PATH variables in ~/.bash_profile; e.g. PATH for php@72
 source ~/.bash_profile
 
@@ -93,6 +87,8 @@ alias ss='touch ~/.ssh/config; and cat ~/.ssh/config'
 # -------------------------------------------------------------------------------------------------
 alias ci='composer install '
 alias cs='composer search '
+alias cr='composer require '
+
 
 # yarn
 # -------------------------------------------------------------------------------------------------
