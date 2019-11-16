@@ -20,6 +20,8 @@ alias life='cd ~/sites/github/lifegrid; code .'
 alias nines='cd ~/sites/github/nines; code .'
 alias pattern='cd ~/sites/github/react-pattern; code .'
 alias minimal='cd ~/sites/github/minimal-react-starter; code .'
+alias rmb='cd ~/sites/github/rmb'
+
 
 # React
 alias react-create='github; git clone https://github.com/vikbert/minimal-react-starter.git -s '
@@ -28,11 +30,12 @@ alias react-create='github; git clone https://github.com/vikbert/minimal-react-s
 # -------------------------------------------------------------------------------------------------
 alias sms='cd ~/lidl/carsales'
 alias be='sms'
-alias run='sms; bash run.sh '
-alias run:behat='sms; bash run.sh test:behat'
+alias r='sms; bash run.sh '
+alias test:behat='sms; bash run.sh test:behat'
+alias test:phpunit='sms; bash run.sh test:phpunit '
 alias fe='cd ~/lidl/carsales/app/_frontend'
 alias fd='fe; y devserver'
-alias ft='fe; y test'
+alias ft='sms; bash run.sh jest'
 alias mjest='fe; majestic --app'
 alias ff='fe; node_modules/.bin/eslint --fix .'
 alias btf='sms; bash run.sh test:phpunit --filter='
@@ -150,23 +153,19 @@ alias gm-date='git commit --amend --date='
 alias gclean='git clean -f -d'
 alias gri='git rebase -i'
 alias grc='git rebase --continue'
-
 alias gb='git branch'
+alias gbd='git branch -D'
 alias gbr='git branch -r'
 alias gba='git branch -v -a'
-
 alias gc='git checkout'
 alias gcb='git checkout -b '
-
 alias gu='git pull'
 alias gur='git pull --rebase'
-
 alias gcl='git clone'
 alias gf='git reflog'
 alias gl="git log --graph --decorate"
 alias greset='git reset --hard HEAD'
 alias gtags='git ls-remote --tags'
-
 alias gsl='git stash list'
 alias gss='git stash save '
 alias gsa='git stash apply'
