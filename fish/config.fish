@@ -9,6 +9,9 @@ alias ce='export VISUAL=vim; crontab -e'
 # chrome shortcut 
 # -------------------------------------------------------------------------------------------------
 alias fo='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --app=http://vertriebsportal.localhost:8080'
+function foo
+  /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --app=$argv
+end
 
 # paths github
 # -------------------------------------------------------------------------------------------------
@@ -21,6 +24,7 @@ alias nines='cd ~/sites/github/nines; code .'
 alias pattern='cd ~/sites/github/react-pattern; code .'
 alias minimal='cd ~/sites/github/minimal-react-starter; code .'
 alias rmb='cd ~/sites/github/rmb'
+alias rt='cd ~/sites/github/retinder'
 
 
 # React
@@ -161,7 +165,11 @@ alias gc='git checkout'
 alias gcb='git checkout -b '
 alias gu='git pull'
 alias gur='git pull --rebase'
-alias gcl='git clone'
+function gcl --description "git clone then enter the directory"
+  git clone $argv;
+  cd $argv; and yarn install; and yarn start;
+end
+#alias gcl='git clone'
 alias gf='git reflog'
 alias gl="git log --graph --decorate"
 alias greset='git reset --hard HEAD'
