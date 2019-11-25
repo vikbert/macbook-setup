@@ -21,21 +21,18 @@ alias nines='cd ~/sites/github/nines; code .'
 alias pattern='cd ~/sites/github/react-pattern; code .'
 alias minimal='cd ~/sites/github/minimal-react-starter; code .'
 alias rmb='cd ~/sites/github/rmb'
-
-
-# React
-alias react-create='github; git clone https://github.com/vikbert/minimal-react-starter.git -s '
+alias retinder='cd ~/sites/github/retinder'
 
 # paths SMS
 # -------------------------------------------------------------------------------------------------
 alias sms='cd ~/lidl/carsales'
 alias be='sms'
-alias r='sms; bash run.sh '
+alias run='sms; bash run.sh '
+alias test:jest='sms; bash run.sh jest'
 alias test:behat='sms; bash run.sh test:behat'
 alias test:phpunit='sms; bash run.sh test:phpunit '
 alias fe='cd ~/lidl/carsales/app/_frontend'
 alias fd='fe; y devserver'
-alias ft='sms; bash run.sh jest'
 alias mjest='fe; majestic --app'
 alias ff='fe; node_modules/.bin/eslint --fix .'
 alias btf='sms; bash run.sh test:phpunit --filter='
@@ -103,6 +100,14 @@ alias yb='yarn build'
 alias ya='yarn global add'
 alias yd='yarn deploy'
 
+# npm 
+# -------------------------------------------------------------------------------------------------
+alias ni='npm install '
+alias nb='npm run build '
+alias ns='npm run start '
+alias nd='npm run dev '
+alias np='npm publish '
+
 # brew
 # -------------------------------------------------------------------------------------------------
 alias bi='brew install'
@@ -130,7 +135,6 @@ alias as='alias | grep '
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true; and killall Finder"
 alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false; and killall Finder"
 alias et="rm -rfv ~/.Trash"
-alias clone_editorconfig='cp ~/sites/github/awesome-macbook-setup/.editorconfig .editorconfig'
 
 # tree
 # -------------------------------------------------------------------------------------------------
@@ -203,10 +207,6 @@ alias drm="docker rm -f"
 # tig
 # -------------------------------------------------------------------------------------------------
 alias ts='tig status'
-
-# github
-# -------------------------------------------------------------------------------------------------
-alias github_config='git config user.name "Xun Zhou"; and git config user.email "segentor@gmail.com"'
 
 # use "cheat" for detect the usage of comand
 # -------------------------------------------------------------------------------------------------
