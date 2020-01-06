@@ -26,31 +26,38 @@ alias minimal='cd ~/sites/github/minimal-react-starter; code .'
 alias rmb='cd ~/sites/github/rmb'
 alias retinder='cd ~/sites/github/retinder'
 
-# React
+# React & typescript
 alias react-create='github; git clone https://github.com/vikbert/minimal-react-starter.git -s '
 
 # paths SMS
 # -------------------------------------------------------------------------------------------------
 alias sms='cd ~/lidl/carsales'
-alias be='sms'
 alias run='sms; bash run.sh '
-alias test:jest='sms; bash run.sh jest'
-alias test:behat='sms; bash run.sh test:behat'
-alias test:phpunit='sms; bash run.sh test:phpunit '
+alias test:jest='sms; docker-compose run --rm node npm run test '
+alias test:jest:path='sms; docker-compose run --rm node npm test -- --runTestsByPath '
+alias test:unit='sms; rm -rf ./app/var/*.db*; bash run.sh test:phpunit '
+alias test:behat='print "🔥 Please < npm run build >, if JS files getting updated!  \n\n"; sms; rm -rf ./app/var/*.db*; bash run.sh test:behat '
+alias node:download='sms; docker-compose run --rm node npm run download' 
+alias node:test='sms; docker-compose run --rm node npm run test ' 
 alias fe='cd ~/lidl/carsales/app/_frontend'
 alias fd='fe; y devserver'
-alias mjest='fe; majestic --app'
 alias ff='fe; node_modules/.bin/eslint --fix .'
-alias btf='sms; bash run.sh test:phpunit --filter='
-alias btg='sms; bash run.sh test:phpunit --group='
-alias bta='sms; bash run.sh test:phpunit '
+alias mjest='fe; majestic --app'
 
-function reset-db
+function reset:nginx
+    sms; and bash run.sh reset:nginx
+end
+
+function reset:php
+    sms; and bash run.sh reset:php
+end
+
+function reset:db
     sms
     docker-compose run --rm php bin/console doctrine:database:drop --if-exists -n --force
     docker-compose run --rm php bin/console doctrine:database:create --if-not-exists -n
     docker-compose run --rm php bin/console doctrine:migrations:migrate -vvv -n
-    docker-compose run --rm php bin/console carsales:fixtures:load -n
+    docker-compose run --rm php bin/console doctrine:fixtures:load -n
 end
 
 function hello 
@@ -79,6 +86,9 @@ end
 
 function port --description "show who is listening to the port $argv"
   lsof -n -i4TCP:$argv | grep LISTEN
+end
+function print --description "print text with color"
+  printf "\033[32m $argv \033[0m"
 end
 
 # FINDER sidebar
@@ -151,14 +161,14 @@ alias t3='tree -L 3 .'
 # Git
 # -------------------------------------------------------------------------------------------------
 alias gt='git tag '
-alias ga='git add '
 alias gap='git add .; and git commit -m "updates"; git push -f'
+alias gam='git add .; and git commit -m "updates"'
 
 alias gp='git push'
 alias gpr='git push -u origin master'
 alias gst='git status'
 alias gm='git commit -m'
-alias gam='git commit --amend'
+alias gca='git commit --amend'
 alias gm-date='git commit --amend --date='
 alias gclean='git clean -f -d'
 alias gri='git rebase -i'
@@ -176,10 +186,11 @@ function gcl --description "git clone then enter the directory"
   cd $argv; and yarn install; and yarn start;
 end
 #alias gcl='git clone'
-alias gf='git reflog'
+alias gf='git fetch'
 alias gl="git log --graph --decorate"
 alias greset='git reset --hard HEAD'
 alias gtags='git ls-remote --tags'
+alias gs='git stash'
 alias gsl='git stash list'
 alias gss='git stash save '
 alias gsa='git stash apply'
