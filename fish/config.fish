@@ -15,9 +15,14 @@ end
 
 # paths github
 # -------------------------------------------------------------------------------------------------
+alias rolex='cd /Users/zhoux/sites/github/extensions-demo/rolex'
+alias nutab='cd /Users/zhoux/sites/github/extensions-demo/nutab'
+alias yitab='cd /Users/zhoux/sites/github/extensions-demo/yitab'
 alias gh='cd ~/sites/github/' 
 alias dianzi='cd ~/sites/github/dianzi; code .' 
+alias 100="cd ~/sites/github/100daysofcode; code ."
 alias zaobao='cd ~/sites/github/zaobao; code .'
+alias aino='cd ~/sites/github/aino; code .'
 alias meiri='cd ~/sites/github/meiri; code .'
 alias life='cd ~/sites/github/lifegrid; code .'
 alias nines='cd ~/sites/github/nines; code .'
@@ -26,21 +31,35 @@ alias minimal='cd ~/sites/github/minimal-react-starter; code .'
 alias rmb='cd ~/sites/github/rmb'
 alias retinder='cd ~/sites/github/retinder'
 
-# React & typescript
-alias react-create='github; git clone https://github.com/vikbert/minimal-react-starter.git -s '
+# react + snowpack 
+# -------------------------------------------------------------------------------------------------
+function snowreact
+  npx create-snowpack-app $argv --template @snowpack/app-template-react-typescript
+end
+
+
+
+# STACKIT APP CLOUD 
+# -------------------------------------------------------------------------------------------------
+alias cflogin='cf login -a https://api.system.eu03.stackit.schwarz --sso'
+alias cfhelp='cf help -a'
+
 
 # paths SMS
 # -------------------------------------------------------------------------------------------------
 alias sms='cd ~/lidl/carsales'
+alias ex='cd /Users/zhoux/lidl/carex'
 alias run='sms; bash run.sh '
 alias test:jest='sms; docker-compose run --rm node npm run test '
 alias test:jest:path='sms; docker-compose run --rm node npm test -- --runTestsByPath '
-alias test:unit='sms; rm -rf ./app/var/*.db*; bash run.sh test:phpunit '
-alias test:behat='print "🔥 Please < npm run build >, if JS files getting updated!  \n\n"; sms; rm -rf ./app/var/*.db*; bash run.sh test:behat '
+alias test:unit='sms; bash run.sh test:phpunit '
+alias test:behat='sms; print "🔥 Please [npm run build], if JS files getting updated!  \n\n"; bash run.sh test:behat '
+alias test:behat:c='sms; print "🔥 Please [npm run build], if JS files getting updated!  \n\n"; sms; '
 alias node:download='sms; docker-compose run --rm node npm run download' 
 alias node:test='sms; docker-compose run --rm node npm run test ' 
 alias fe='cd ~/lidl/carsales/app/_frontend'
 alias fd='fe; y devserver'
+alias fb='fe; npm run build'
 alias ff='fe; node_modules/.bin/eslint --fix .'
 alias mjest='fe; majestic --app'
 
@@ -58,6 +77,9 @@ function reset:db
     docker-compose run --rm php bin/console doctrine:database:create --if-not-exists -n
     docker-compose run --rm php bin/console doctrine:migrations:migrate -vvv -n
     docker-compose run --rm php bin/console doctrine:fixtures:load -n
+end
+function reset
+    sms; reset:php; reset:nginx; reset:db;
 end
 
 function hello 
@@ -90,6 +112,9 @@ end
 function print --description "print text with color"
   printf "\033[32m $argv \033[0m"
 end
+function wlan --description "wlan off|on"
+  networksetup -setairportpower en1 $argv
+end
 
 # FINDER sidebar
 # -------------------------------------------------------------------------------------------------
@@ -119,10 +144,14 @@ alias yd='yarn deploy'
 # npm 
 # -------------------------------------------------------------------------------------------------
 alias ni='npm install '
+alias nui='npm uninstall '
 alias nb='npm run build '
 alias ns='npm run start '
 alias nd='npm run dev '
+alias nw='npm run watch'
 alias np='npm publish '
+alias psize='npx package-size '
+alias nlg='npm list -g --depth=0'
 
 # brew
 # -------------------------------------------------------------------------------------------------
@@ -161,6 +190,7 @@ alias t3='tree -L 3 .'
 # Git
 # -------------------------------------------------------------------------------------------------
 alias gt='git tag '
+alias ga='git add '
 alias gap='git add .; and git commit -m "updates"; git push -f'
 alias gam='git add .; and git commit -m "updates"'
 
@@ -241,3 +271,11 @@ function sight
   cd ~/Movies/plura_sight
   youtube-dl --username "xun.zhou@lidl.com" --password "Albert&22912" --verbose --sleep-interval 120 "$argv"
 end
+
+# youtube mp3 download
+# -------------------------------------------------------------------------------------------------
+function yd
+  cd ~/Documents/music
+  youtube-dl -x --audio-format mp3 "$argv"
+end
+
