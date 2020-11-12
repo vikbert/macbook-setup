@@ -11,6 +11,9 @@ alias ce='export VISUAL=vim; crontab -e'
 alias create-svelte-app='npx degit sveltejs/template '
 alias create-vue-app='npx @vuesion/service create '
 
+# sf5 
+# -------------------------------------------------------------------------------------------------
+alias sc='symfony console '
 
 # cypress 
 # -------------------------------------------------------------------------------------------------
@@ -45,6 +48,7 @@ alias rmb='cd ~/sites/github/rmb'
 alias retinder='cd ~/sites/github/retinder'
 alias licai='cd /Users/zhoux/sites/github/licai'
 alias guestbook='cd /Users/zhoux/sites/github/symfony5/guestbook'
+alias schulung='cd /Users/zhoux/sites/github/schulung/sf5-training'
 
 # Cloud Foundry 
 # -------------------------------------------------------------------------------------------------
@@ -73,6 +77,7 @@ end
 function cfmq_staging
   cf ssh carsales-staging -c 'while true; do curl -i  http://a9s-brk-usr-b8dc830f0ab1633c2d42af5f89eda7db3e3e333f:a9s250bb478da8036f194676b595a0feb8d47922c7e@rad41ef64.service.dc1.a9ssvc:15672/api/queues/%2f/messages; sleep 10; done;' | grep "messages_ready_ram"
 end
+
 function cfmq_qa
   cf ssh carsales-qa -c 'while true; do curl -i  http://a9s-brk-usr-0f7d0945332006bbafc1309ab1bf5a2feb187e9f:a9s3150b1ecfdcbe2b147b77ceab656e0841c14d078@rad2210a9.service.dc1.a9ssvc:15672/api/queues/%2f/messages; sleep 10; done;' | grep "messages_ready_ram"
 end
@@ -231,7 +236,7 @@ alias nt='npm run test'
 alias nb='npm run build '
 alias ns='npm run start '
 alias nd='npm run dev '
-alias ns='npm search '
+alias ns='npm run start '
 alias nw='npm run watch'
 alias np='npm run deploy'
 alias psize='npx package-size '
@@ -362,4 +367,3 @@ end
 function wlan --description "wlan off|on"
   networksetup -setairportpower en1 $argv
 end
-
