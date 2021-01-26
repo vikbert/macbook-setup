@@ -3,17 +3,38 @@
 # load the defined PATH variables in ~/.bash_profile; e.g. PATH for php@72
 source ~/.bash_profile
 
+# taskbook
+alias t='tb -t '
+alias tl='tb -l '
+alias tc='tb -c '
+alias th='tb -h'
+alias td='tb -d'
+
 # 定义vim 到 mvim
 alias ce='export VISUAL=vim; crontab -e'
+
+# images processing
+alias png32="pngquant 32 --skip-if-larger --strip --ext=.png --force"
+alias png16="pngquant 16 --skip-if-larger --strip --ext=.png --force"
+alias png8="pngquant 8 --skip-if-larger --strip --ext=.png --force"
+alias png="pngquant 4 --skip-if-larger --strip --ext=.png --force"
+
 
 # svelte
 # -------------------------------------------------------------------------------------------------
 alias create-svelte-app='npx degit sveltejs/template '
+alias create-snapper-app='npx degit "sveltejs/sapper-template#rollup" '
 alias create-vue-app='npx @vuesion/service create '
+alias bd="bash deploy.sh"
 
-# sf5 
+# symfony 
 # -------------------------------------------------------------------------------------------------
+alias sf='symfony '
 alias sc='symfony console '
+alias ss='symfony serve'
+alias bins='bin/console '
+alias conf='cd /Users/zhoux/sites/github/symfony-projects/conferony'
+alias sso='cd /Users/zhoux/lidl/ssomoc'
 
 # cypress 
 # -------------------------------------------------------------------------------------------------
@@ -28,6 +49,8 @@ alias pythonnote='cd /Users/zhoux/sites/jupyter-notebooks/python-notebooks; note
 
 # shortcut to github project
 # -------------------------------------------------------------------------------------------------
+alias bookstore='cd /Users/zhoux/sites/github/svelte-projects/svelte-bookstore'
+alias vikbert='cd /Users/zhoux/sites/github/vikbert.github.io/app && code .'
 alias pal='cd /Users/zhoux/sites/github/parcel-demo'
 alias rolex='cd /Users/zhoux/sites/github/extensions-demo/rolex'
 alias cy='cd /Users/zhoux/sites/github/cypress-demo'
@@ -47,8 +70,10 @@ alias minimal='cd ~/sites/github/minimal-react-starter; code .'
 alias rmb='cd ~/sites/github/rmb'
 alias retinder='cd ~/sites/github/retinder'
 alias licai='cd /Users/zhoux/sites/github/licai'
-alias guestbook='cd /Users/zhoux/sites/github/symfony5/guestbook'
-alias schulung='cd /Users/zhoux/sites/github/schulung/sf5-training'
+alias guestbook='cd /Users/zhoux/sites/github/symfony-projects/guestbook'
+alias sl='cd /Users/zhoux/sites/github/schulung'
+alias ts='cd /Users/zhoux/sites/github/typescript-projects'
+alias effective='cd /Users/zhoux/sites/github/typescript-projects/effective-typescript'
 
 # Cloud Foundry 
 # -------------------------------------------------------------------------------------------------
@@ -115,6 +140,7 @@ end
 # carsales 
 # -------------------------------------------------------------------------------------------------
 alias sms='cd ~/lidl/carsales'
+alias siam='cd /Users/zhoux/lidl/siamoc'
 alias test:jest='sms; docker-compose run --rm node npm run test '
 alias test:jest:path='sms; docker-compose run --rm node npm test -- --runTestsByPath '
 alias test:unit='sms; bash run.sh test:phpunit '
@@ -208,9 +234,6 @@ end
 # -------------------------------------------------------------------------------------------------
 alias restore_finder="cd ~/Library/Preferences; and  sudo find com.apple.finder.plist* -exec rm {} \;; and  killall Finder"
 
-# SSH config 
-# -------------------------------------------------------------------------------------------------
-alias ss='touch ~/.ssh/config; and cat ~/.ssh/config'
 
 # composer 
 # -------------------------------------------------------------------------------------------------
@@ -265,19 +288,13 @@ alias as='alias | grep '
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true; and killall Finder"
 alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false; and killall Finder"
 alias te="rm -rfv ~/.Trash"
-alias sf='symfony'
 alias pw="pwgen"
-
-# tree
-# -------------------------------------------------------------------------------------------------
-alias t='tree .'
-alias t2='tree -L 2 .'
-alias t3='tree -L 3 .'
-alias t4='tree -L 4 .'
-alias t5='tree -L 5 .'
+alias dp='bash deploy.sh'
 
 # Git
 # -------------------------------------------------------------------------------------------------
+alias gru="git config --get remote.origin.url"
+alias gd="git diff "
 alias ga='git add '
 alias gap='git add .; and git commit -m "updates"; git push -f'
 alias gm='git add .; and git commit -m '
@@ -285,6 +302,8 @@ alias gma='git commit --amend'
 alias gmd='git commit --amend --date='
 alias gp='git push'
 alias gst='git status'
+alias grh='git reset --hard'
+alias gsp='git stash pop'
 alias gcl='git clone '
 alias gclean='git clean -f -d'
 alias gb='git branch'
