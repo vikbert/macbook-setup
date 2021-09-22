@@ -3,6 +3,45 @@
 # load the defined PATH variables in ~/.bash_profile; e.g. PATH for php@72
 source ~/.bash_profile
 
+# chapter project
+# -------------------------------------------------------------------------------------------------
+alias tsf='cd /Users/zhoux/sites/github/symfony-projects/testing-in-symfony'
+alias ftest='cd /Users/zhoux/lidl/flyer/flyer-react; yarn run test:file'
+alias fdata='cd /Users/zhoux/lidl/flyer/flyer-data; yarn run server'
+alias freact='cd /Users/zhoux/lidl/flyer/flyer-react; yarn run start'
+alias sitbot='cd /Users/zhoux/lidl/sitbot'
+alias musk='cd /Users/zhoux/sites/github/react-projects/maxtimer; code .; nd'
+alias chapteronly='cd /Users/zhoux/sites/github/symfony-projects/chapteronly; jb .'
+alias gop='cd /Users/zhoux/sites/github/go-project'
+
+
+# my new aliases 
+# -------------------------------------------------------------------------------------------------
+alias tm='cd /tmp/' 
+alias bot='cd /Users/zhoux/lidl/chatbot-projects'
+alias rmf='rm -rf '
+alias csa='npx degit vikbert/sests '
+alias cra='npx degit vikbert/vite-react-ts '
+alias sit='cd /Users/zhoux/sites/github/sit-project'
+alias siam='cd /Users/zhoux/lidl/vcs-schwarz/siam-oauth2-fake-server'
+alias s3='s3cmd'
+alias de='cd /Users/zhoux/sites/github/deutschkurs && code .'
+alias storage='cd /Users/zhoux/lidl/chapter-storage'
+alias storage-demo='cd /Users/zhoux/lidl/chapter-storage-symfony'
+alias flyer='cd /Users/zhoux/lidl/flyer'
+alias fl-react='flyer && cd flyer-react'
+alias fl-data='flyer && cd flyer-data'
+alias wal='cd /Users/zhoux/sites/github/svelte-projects/wal && code .'
+alias koding='cd /Users/zhoux/sites/github/react-projects/koding && jb .'
+alias slides='cd /Users/zhoux/sites/github/slides && code .'
+alias deutsch='cd /Users/zhoux/sites/github/deutschkurs && code .'
+alias dcss='curl https://raw.githubusercontent.com/vikbert/100daysofcode/master/markdown.css -o markdown.css'
+
+
+# utilities
+# -------------------------------------------------------------------------------------------------
+alias serve='python -m SimpleHTTPServer'
+
 # taskbook
 alias t='tb -t '
 alias tl='tb -l '
@@ -18,9 +57,15 @@ alias png32="pngquant 32 --skip-if-larger --strip --ext=.png --force"
 alias png16="pngquant 16 --skip-if-larger --strip --ext=.png --force"
 alias png8="pngquant 8 --skip-if-larger --strip --ext=.png --force"
 alias png="pngquant 4 --skip-if-larger --strip --ext=.png --force"
+alias desk='cd /Users/zhoux/Desktop'
+
+# heroku 
+# -------------------------------------------------------------------------------------------------
+alias he='heroku'
+alias hedeploy='git push heroku master'
 
 
-# svelte
+# frontend 
 # -------------------------------------------------------------------------------------------------
 alias create-svelte-app='npx degit sveltejs/template '
 alias create-snapper-app='npx degit "sveltejs/sapper-template#rollup" '
@@ -32,7 +77,6 @@ alias bd="bash deploy.sh"
 alias sf='symfony '
 alias sc='symfony console '
 alias ss='symfony serve'
-alias bins='bin/console '
 alias conf='cd /Users/zhoux/sites/github/symfony-projects/conferony'
 alias sso='cd /Users/zhoux/lidl/ssomoc'
 
@@ -49,6 +93,7 @@ alias pythonnote='cd /Users/zhoux/sites/jupyter-notebooks/python-notebooks; note
 
 # shortcut to github project
 # -------------------------------------------------------------------------------------------------
+alias stackpc='cd github/react-projects/stackpc'
 alias bookstore='cd /Users/zhoux/sites/github/svelte-projects/svelte-bookstore'
 alias vikbert='cd /Users/zhoux/sites/github/vikbert.github.io/app && code .'
 alias pal='cd /Users/zhoux/sites/github/parcel-demo'
@@ -63,27 +108,36 @@ alias zaobao='cd ~/sites/github/zaobao; code .'
 alias aino='cd ~/sites/github/aino; code .'
 alias meiri='cd ~/sites/github/meiri; code .'
 alias life='cd ~/sites/github/lifegrid; code .'
+alias lifets='cd /Users/zhoux/sites/github/typescript-projects/lifecalender-ts; code .'
 alias nines='cd ~/sites/github/nines; code .'
+alias mydev='cd /Users/zhoux/lidl/mydev.io; code .; npm run dev;'
 alias pix='cd ~/sites/github/pixss; code .'
+alias pixssvelte='cd /Users/zhoux/sites/github/svelte-projects/pixssvelte; code .'
 alias pattern='cd ~/sites/github/react-pattern; code .'
 alias minimal='cd ~/sites/github/minimal-react-starter; code .'
 alias rmb='cd ~/sites/github/rmb'
 alias retinder='cd ~/sites/github/retinder'
 alias licai='cd /Users/zhoux/sites/github/licai'
 alias guestbook='cd /Users/zhoux/sites/github/symfony-projects/guestbook'
-alias sl='cd /Users/zhoux/sites/github/schulung'
+alias schulung='cd /Users/zhoux/sites/github/schulung'
 alias ts='cd /Users/zhoux/sites/github/typescript-projects'
 alias effective='cd /Users/zhoux/sites/github/typescript-projects/effective-typescript'
+alias maskr='cd /Users/zhoux/sites/github/maskr'
+alias sfcom='cd /Users/zhoux/sites/github/svelte-projects/sf-components; code .'
+alias toll='cd /Users/zhoux/sites/github/svelte-projects/toll; code .'
+alias svelte='cd ~/sites/github/svelte-projects'
+alias react='cd /Users/zhoux/sites/github/react-projects'
+
 
 # Cloud Foundry 
 # -------------------------------------------------------------------------------------------------
-alias cflogin='cf login -a https://api.system.eu03.stackit.schwarz --sso'
-alias cfloginextern='cf login -a https://api.system.eu01.cloud.schwarz --sso'
-alias db-prod='cf ssh -L 63306:msd1448f7-mysql-0.node.dc1.a9ssvc:3306 carsales'
-alias db-qa='cf ssh -L 63306:msd595def-mysql-0.node.dc1.a9ssvc:3306 carsales-qa'
-alias db-staging='cf ssh -L 63306:msd6129ab-mysql-0.node.dc1.a9ssvc:3306 carsales-staging'
-alias db-prod-carex='cf ssh -L 63306:msd752b7c.service.dc1.a9ssvc:3306 carex'
-alias db-qa-carex='cf ssh -L 63306:msd706415.service.dc1.a9ssvc:3306 carex-qa'
+alias cflogin='cf login -a https://api.system.02.cf.eu01.stackit.schwarz --sso'
+alias cfloginextern='cf login -a https://api.system.01.cf.eu01.stackit.cloud  --sso --skip-ssl-validation'
+alias db-prod='cf target -s prod; cf ssh -L 63306:msd1448f7-mysql-0.node.dc1.a9ssvc:3306 carsales'
+alias db-qa='cf target -s qa; cf ssh -L 63306:msd7123a6.service.dc1.a9ssvc:3306 carsales-qa'
+alias db-staging='cf target -s staging; cf ssh -L 63306:msd6129ab-mysql-0.node.dc1.a9ssvc:3306 carsales-staging'
+alias db-prod-carex='cf target -s prod; cf ssh -L 63306:msd752b7c.service.dc1.a9ssvc:3306 carex'
+alias db-qa-carex='cf target -s qa; cf ssh -L 63306:msd706415.service.dc1.a9ssvc:3306 carex-qa'
 # start a new queue worker
 alias cfworker='cf_start_worker '
 alias cfstream='cf_stream_log '
@@ -140,25 +194,24 @@ end
 # carsales 
 # -------------------------------------------------------------------------------------------------
 alias sms='cd ~/lidl/carsales'
-alias siam='cd /Users/zhoux/lidl/siamoc'
+alias carex='cd ~/lidl/carex'
+alias lidl='cd ~/lidl/'
+alias trace='cd ~/lidl/cartrace'
+alias mob='cd /Users/zhoux/lidl/react-mob-programming'
 alias test:jest='sms; docker-compose run --rm node npm run test '
 alias test:jest:path='sms; docker-compose run --rm node npm test -- --runTestsByPath '
 alias test:unit='sms; bash run.sh test:phpunit '
 alias test:behat='sms; print "🔥 Please [npm run build], if JS files getting updated!  \n\n"; bash run.sh test:behat '
 alias fe='cd ~/lidl/carsales/app/_frontend'
-alias fd='fe; y devserver'
-alias fb='fe; npm run build; cd -'
+alias fd='sms; docker-compose run --rm --service-ports node npm start'
+alias fb='sms; docker-compose run --rm node npm run build; cd -'
 alias dc='docker-compose'
-alias dcphp='docker-compose exec php bin/console '
-alias dccy='docker-compose run --rm cypress cypress open '
-alias T4='dcphp car:export:sap T4'
-alias T5='dcphp car:export:sap T5'
+alias dcphp='docker-compose exec php  '
 alias dcworker='sms; docker-compose exec php_worker bin/console '
 alias worker_reset='sms; docker-compose stop php_worker; docker-compose up -d'
 alias dccron='docker-compose exec php_cron bin/console '
-alias bmwimport='dcphp car:import:bmw:xml features/testFiles/bmwImport/BMW_SharePoint_00000583.valid.xml'
-alias t4='dcphp car:export:sap T4'
-alias t5='dcphp car:export:sap T5'
+alias t4='dcphp bin/console car:export:sap T4'
+alias t5='dcphp bin/console car:export:sap T5'
 alias hello='sms; docker-compose restart mailcatcher db nginx php php_worker rabbitmq redis minio_s3 httpbin'
 alias ciao='sms; docker-compose stop' 
 
@@ -240,6 +293,8 @@ alias restore_finder="cd ~/Library/Preferences; and  sudo find com.apple.finder.
 alias ci='composer install '
 alias cs='composer search '
 alias cr='composer require '
+alias scr='symfony composer require'
+
 
 
 # yarn
@@ -248,27 +303,30 @@ alias y='yarn'
 alias yi='yarn install'
 alias ys='yarn start'
 alias yb='yarn build'
-alias ya='yarn global add'
-alias yd='yarn deploy'
+alias yd='yarn dev'
 
-# npm 
+# pnpm 
 # -------------------------------------------------------------------------------------------------
-alias ni='npm install '
-alias nui='npm uninstall '
-alias nt='npm run test'
-alias nb='npm run build '
-alias ns='npm run start '
-alias nd='npm run dev '
-alias ns='npm run start '
-alias nw='npm run watch'
-alias np='npm run deploy'
+alias ni='pnpm install '
+alias nt='pnpm run test'
+alias nr='pnpm rm '
+alias nb='pnpm run build '
+alias ns='pnpm run start '
+alias nd='pnpm run dev '
+alias nw='pnpm run watch'
+alias nv='pnpm run validate'
+alias np='pnpm run deploy'
+alias nf='pnpm run format'
 alias psize='npx package-size '
-alias nlg='npm list -g --depth=0'
 
 # brew
 # -------------------------------------------------------------------------------------------------
 alias bi='brew install'
 alias bs='brew search'
+alias php72='brew unlink php && brew link --overwrite --force php@7.2'
+alias php73='brew unlink php && brew link --overwrite --force php@7.3'
+alias php74='brew unlink php && brew link --overwrite --force php@7.4'
+alias php80='brew unlink php && brew link --overwrite --force php@8.0'
 
 # command
 # -------------------------------------------------------------------------------------------------
@@ -279,6 +337,7 @@ alias version='echo nodejs; and  node -v; and  echo npm; and  npm -v; and  php -
 alias lh='ls -a | egrep "^\."'
 alias l='ls -alh'
 alias h='cd ~'
+alias desk='cd /Users/zhoux/Desktop'
 alias c='clear'
 alias x="exit"
 alias ap='cd ~/sites/github/awesome-macbook-setup/; and ga .; and gam "updated aliases"; and git push -f'
@@ -297,19 +356,21 @@ alias gru="git config --get remote.origin.url"
 alias gd="git diff "
 alias ga='git add '
 alias gap='git add .; and git commit -m "updates"; git push -f'
-alias gm='git add .; and git commit -m '
+alias gp='git push'
+alias gpo='git push -u origin main'
+alias gm="git add .; and git commit -m "
+alias gam="git add .; and git commit -m 'updates' "
 alias gma='git commit --amend'
 alias gmd='git commit --amend --date='
-alias gp='git push'
 alias gst='git status'
 alias grh='git reset --hard'
 alias gsp='git stash pop'
 alias gcl='git clone '
-alias gclean='git clean -f -d'
 alias gb='git branch'
 alias gbd='git branch -D'
 alias gbm='git branch -m '
 alias gba='git branch -v -a'
+alias gr='git remote -v'
 alias gbr='git branch -r'
 alias gc='git checkout'
 alias gcb='git checkout -b '
@@ -360,7 +421,7 @@ end
 
 # download: youtube to mp3
 # -------------------------------------------------------------------------------------------------
-function yd
+function youtubed
   cd ~/Documents/music
   youtube-dl -x --audio-format mp3 "$argv"
 end
@@ -386,3 +447,27 @@ end
 function wlan --description "wlan off|on"
   networksetup -setairportpower en1 $argv
 end
+
+function sort --description "clean up and sort files"
+mkdir -p images docs software audio;
+touch _tmp_.eml; set files *.eml; mv $files docs;
+touch _tmp_.sh; set files *.sh; mv $files docs;
+touch _tmp_.potx; set files *.potx; mv $files docs;
+touch _tmp_.sql; set files *.sql; mv $files docs;
+touch _tmp_.pptx; set files *.pptx; mv $files docs;
+touch _tmp_.kdbx; set files *.kdbx; mv $files docs;
+touch _tmp_.xlsx; set files *.xlsx; mv $files docs;
+touch _tmp_.docx; set files *.docx; mv $files docs;
+touch _tmp_.csv; set files *.csv; mv $files docs;
+touch _tmp_.yml; set files *.yml; mv $files docs;
+touch _tmp_.pdf; set files *.pdf; mv $files docs;
+touch _tmp_.doc; set files *.doc; mv $files docs;
+touch _tmp_.ppx; set files *.ppx; mv $files docs;
+touch _tmp_.mht; set files *.mht; mv $files docs;
+touch _tmp_.png; set files *.png; mv $files images;
+touch _tmp_.zip; set files *.zip; mv $files software;
+touch _tmp_.pkg; set files *.pkg; mv $files software;
+touch _tmp_.json; set files *.json; mv $files docs;
+touch _tmp_.mp3; set files *.mp3; mv $files audio;
+end
+
